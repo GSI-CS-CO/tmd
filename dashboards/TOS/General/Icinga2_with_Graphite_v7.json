@@ -1,0 +1,1385 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "Icinga2 & Graphite Dashboard",
+  "editable": true,
+  "gnetId": 56,
+  "graphTooltip": 0,
+  "id": 2,
+  "iteration": 1574175435241,
+  "links": [],
+  "panels": [
+    {
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 19,
+      "title": "Performance data",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": "",
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "graphite",
+      "fill": 1,
+      "gridPos": {
+        "h": 8,
+        "w": 10,
+        "x": 0,
+        "y": 1
+      },
+      "id": 13,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "paceLength": 10,
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasByNode(scale(icinga.$hostname.host.perfdata.pl.$pl, 1), 1)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Packet loss",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "fill": 1,
+      "gridPos": {
+        "h": 8,
+        "w": 10,
+        "x": 10,
+        "y": 1
+      },
+      "id": 15,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "paceLength": 10,
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refId": "A",
+          "target": "aliasByNode(scale(icinga.$hostname.host.perfdata.rta.$rta, 1), 1)"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "RTA",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "ms",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "content": "![alt text](https://www.icinga.org/wp-content/uploads/2014/06/logo_icinga_white-300x1161.png \"Icinga2\")\nExtend this dashboard by adding more services to your Icinga configuration. Correlate thresholds with performance data and maintenance works.",
+      "editable": true,
+      "error": false,
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 20,
+        "y": 1
+      },
+      "id": 9,
+      "links": [],
+      "mode": "markdown",
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 17,
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": true,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(252, 0, 0, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": "graphite",
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 4,
+            "x": 0,
+            "y": 10
+          },
+          "hideTimeOverride": true,
+          "id": 1,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "icinga2.$hostname.host.hostalive.metadata.state"
+            }
+          ],
+          "thresholds": "1",
+          "timeFrom": "1m",
+          "title": "Host Alive",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "UP",
+              "value": "0"
+            },
+            {
+              "op": "=",
+              "text": "DOWN",
+              "value": "1"
+            }
+          ],
+          "valueName": "avg"
+        },
+        {
+          "aliasColors": {
+            "CRITICAL": "#890F02",
+            "DOWNTIME": "#E0F9D7",
+            "WARNING": "#CCA300",
+            "critical": "#890F02",
+            "packetloss": "#7EB26D",
+            "removeAboveValue(icinga2.ubuntu.services.ping4.ping4.metadata.downtime_depth, 1)": "#E0F9D7",
+            "rta": "#70DBED",
+            "warning": "#CCA300"
+          },
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "graphite",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {},
+          "gridPos": {
+            "h": 7,
+            "w": 6,
+            "x": 4,
+            "y": 10
+          },
+          "id": 2,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "paceLength": 10,
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "WARNING",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "CRITICAL",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "DOWNTIME",
+              "fill": 2,
+              "linewidth": 0,
+              "steppedLine": true,
+              "yaxis": 1,
+              "zindex": -3
+            }
+          ],
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "F",
+              "target": "alias(icinga2.$hostname.services.ping4.ping4.perfdata.pl.value, 'packetloss')",
+              "textEditor": false
+            },
+            {
+              "hide": false,
+              "refId": "G",
+              "target": "alias(icinga2.$hostname.services.ping4.ping4.perfdata.rta.value, 'rta')"
+            },
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "alias(icinga2.$hostname.services.ping4.ping4.perfdata.rta.warn, 'WARNING')"
+            },
+            {
+              "hide": false,
+              "refId": "B",
+              "target": "alias(icinga2.$hostname.services.ping4.ping4.perfdata.rta.crit, 'CRITICAL')"
+            },
+            {
+              "hide": false,
+              "refId": "H",
+              "target": "alias(asPercent(removeBelowValue(icinga2.$hostname.services.ping4.ping4.metadata.downtime_depth, 1), 1), 'DOWNTIME')",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Ping4",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": 100,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {
+            "CRITICAL": "#890F02",
+            "DOWNTIME": "#E0F9D7",
+            "WARNING": "#CCA300",
+            "critical": "#890F02",
+            "load1": "#6ED0E0",
+            "load1-CRITICAL": "#890F02",
+            "load15": "#0A50A1",
+            "load15-CRITICAL": "#890F02",
+            "load15-WARNING": "#CCA300",
+            "load5": "#1F78C1",
+            "load5-CRITICAL": "#890F02",
+            "load5-WARNING": "#CCA300",
+            "packetloss": "#7EB26D",
+            "removeAboveValue(icinga2.ubuntu.services.ping4.ping4.metadata.downtime_depth, 1)": "#E0F9D7",
+            "rta": "#70DBED",
+            "warning": "#CCA300"
+          },
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "graphite",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {},
+          "gridPos": {
+            "h": 7,
+            "w": 10,
+            "x": 10,
+            "y": 10
+          },
+          "id": 3,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "paceLength": 10,
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "load1-WARNING",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "load1-CRITICAL",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "DOWNTIME",
+              "fill": 2,
+              "linewidth": 0,
+              "steppedLine": true,
+              "yaxis": 2,
+              "zindex": -3
+            },
+            {
+              "alias": "load5-WARNING",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "load5-CRITICAL",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "load15-WARNING",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "load15-CRITICAL",
+              "fill": 0,
+              "yaxis": 1
+            }
+          ],
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(icinga2.$hostname.services.load.load.perfdata.load1.value, 6)"
+            },
+            {
+              "refId": "B",
+              "target": "alias(icinga2.$hostname.services.load.load.perfdata.load1.warn, 'load1-WARNING')"
+            },
+            {
+              "refId": "C",
+              "target": "alias(icinga2.$hostname.services.load.load.perfdata.load1.crit, 'load1-CRITICAL')"
+            },
+            {
+              "refId": "D",
+              "target": "aliasByNode(icinga2.$hostname.services.load.load.perfdata.load5.value, 6)"
+            },
+            {
+              "refId": "E",
+              "target": "alias(icinga2.$hostname.services.load.load.perfdata.load5.warn, 'load5-WARNING')"
+            },
+            {
+              "refId": "F",
+              "target": "alias(icinga2.$hostname.services.load.load.perfdata.load5.crit, 'load5-CRITICAL')"
+            },
+            {
+              "refId": "G",
+              "target": "aliasByNode(icinga2.$hostname.services.load.load.perfdata.load15.value, 6)"
+            },
+            {
+              "refId": "H",
+              "target": "alias(icinga2.$hostname.services.load.load.perfdata.load15.warn, 'load15-WARNING')"
+            },
+            {
+              "refId": "J",
+              "target": "alias(icinga2.$hostname.services.load.load.perfdata.load15.crit, 'load15-CRITICAL')"
+            },
+            {
+              "hide": false,
+              "refId": "K",
+              "target": "alias(asPercent(removeBelowValue(icinga2.$hostname.services.load.load.metadata.downtime_depth, 1), 1), 'DOWNTIME')"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Load",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": 100,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "content": "#### **Thresholds**\nThe thresholds shown here are the thresholds you configured in your Icinga2 configuration. Changing them will automatically also change them in this dashboard. When values exceed thresholds, it is an indicator that alerts have been sent from your Icinga2 monitoring system.",
+          "editable": true,
+          "error": false,
+          "gridPos": {
+            "h": 7,
+            "w": 4,
+            "x": 20,
+            "y": 10
+          },
+          "id": 10,
+          "links": [],
+          "mode": "markdown",
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        },
+        {
+          "aliasColors": {
+            "CRITICAL": "#890F02",
+            "DOWNTIME": "#E0F9D7",
+            "WARNING": "#CCA300",
+            "critical": "#890F02",
+            "free": "#6ED0E0",
+            "load1": "#6ED0E0",
+            "load1-CRITICAL": "#890F02",
+            "load15": "#0A50A1",
+            "load15-CRITICAL": "#890F02",
+            "load15-WARNING": "#CCA300",
+            "load5": "#1F78C1",
+            "load5-CRITICAL": "#890F02",
+            "load5-WARNING": "#CCA300",
+            "max": "#0A437C",
+            "packetloss": "#7EB26D",
+            "processes": "#447EBC",
+            "removeAboveValue(icinga2.ubuntu.services.ping4.ping4.metadata.downtime_depth, 1)": "#E0F9D7",
+            "rta": "#70DBED",
+            "warning": "#CCA300"
+          },
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "graphite",
+          "editable": true,
+          "error": false,
+          "fill": 8,
+          "grid": {},
+          "gridPos": {
+            "h": 7,
+            "w": 10,
+            "x": 0,
+            "y": 17
+          },
+          "id": 6,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "maxPerRow": 3,
+          "nullPointMode": "connected",
+          "paceLength": 10,
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "WARNING",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "CRITICAL",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "DOWNTIME",
+              "fill": 2,
+              "linewidth": 0,
+              "steppedLine": true,
+              "yaxis": 2,
+              "zindex": -3
+            }
+          ],
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(icinga2.$hostname.services.procs.procs.perfdata.procs.value, 'processes')"
+            },
+            {
+              "refId": "B",
+              "target": "alias(icinga2.$hostname.services.procs.procs.perfdata.procs.warn, 'WARNING')"
+            },
+            {
+              "refId": "D",
+              "target": "alias(icinga2.$hostname.services.procs.procs.perfdata.procs.crit, 'CRITICAL')"
+            },
+            {
+              "hide": false,
+              "refId": "E",
+              "target": "alias(asPercent(removeBelowValue(icinga2.$hostname.services.procs.procs.metadata.downtime_depth, 1), 1), 'DOWNTIME')"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Processes",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": 100,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {
+            "CRITICAL": "#890F02",
+            "DOWNTIME": "#E0F9D7",
+            "WARNING": "#CCA300",
+            "critical": "#890F02",
+            "free": "#6ED0E0",
+            "load1": "#6ED0E0",
+            "load1-CRITICAL": "#890F02",
+            "load15": "#0A50A1",
+            "load15-CRITICAL": "#890F02",
+            "load15-WARNING": "#CCA300",
+            "load5": "#1F78C1",
+            "load5-CRITICAL": "#890F02",
+            "load5-WARNING": "#CCA300",
+            "max": "#0A437C",
+            "packetloss": "#7EB26D",
+            "removeAboveValue(icinga2.ubuntu.services.ping4.ping4.metadata.downtime_depth, 1)": "#E0F9D7",
+            "rta": "#70DBED",
+            "swap": "#1F78C1",
+            "warning": "#CCA300"
+          },
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "graphite",
+          "editable": true,
+          "error": false,
+          "fill": 8,
+          "grid": {},
+          "gridPos": {
+            "h": 7,
+            "w": 10,
+            "x": 10,
+            "y": 17
+          },
+          "id": 7,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "maxPerRow": 3,
+          "nullPointMode": "connected",
+          "paceLength": 10,
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "WARNING",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "CRITICAL",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "DOWNTIME",
+              "fill": 2,
+              "linewidth": 0,
+              "steppedLine": true,
+              "yaxis": 2,
+              "zindex": -3
+            }
+          ],
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "alias(icinga2.$hostname.services.swap.swap.perfdata.swap.value, 'swap')"
+            },
+            {
+              "refId": "B",
+              "target": "alias(icinga2.$hostname.services.swap.swap.perfdata.swap.warn, 'WARNING')"
+            },
+            {
+              "refId": "D",
+              "target": "alias(icinga2.$hostname.services.swap.swap.perfdata.swap.crit, 'CRITICAL')"
+            },
+            {
+              "hide": false,
+              "refId": "E",
+              "target": "alias(asPercent(removeBelowValue(icinga2.$hostname.services.procs.procs.metadata.downtime_depth, 1), 1), 'DOWNTIME')"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Free Swap",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": 100,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "content": "#### **Downtimes**\nWhen setting a downtime, for example in IcingaWeb or via API, it will be marked in the affected graph. To get a clean view, the graph legend will display downtimes only when they exist. Downtimes are usually set for maintenance work and are an indicator that graphed data is changing on purpose.",
+          "editable": true,
+          "error": false,
+          "gridPos": {
+            "h": 7,
+            "w": 4,
+            "x": 20,
+            "y": 17
+          },
+          "id": 11,
+          "links": [],
+          "mode": "markdown",
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        },
+        {
+          "aliasColors": {
+            "CRITICAL": "#890F02",
+            "DOWNTIME": "#E0F9D7",
+            "WARNING": "#CCA300",
+            "critical": "#890F02",
+            "free": "#6ED0E0",
+            "load1": "#6ED0E0",
+            "load1-CRITICAL": "#890F02",
+            "load15": "#0A50A1",
+            "load15-CRITICAL": "#890F02",
+            "load15-WARNING": "#CCA300",
+            "load5": "#1F78C1",
+            "load5-CRITICAL": "#890F02",
+            "load5-WARNING": "#CCA300",
+            "max": "#0A437C",
+            "packetloss": "#7EB26D",
+            "removeAboveValue(icinga2.ubuntu.services.ping4.ping4.metadata.downtime_depth, 1)": "#E0F9D7",
+            "rta": "#70DBED",
+            "warning": "#CCA300"
+          },
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "graphite",
+          "editable": true,
+          "error": false,
+          "fill": 8,
+          "grid": {},
+          "gridPos": {
+            "h": 7,
+            "w": 10,
+            "x": 0,
+            "y": 24
+          },
+          "id": 5,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "maxPerRow": 3,
+          "nullPointMode": "connected",
+          "paceLength": 10,
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "WARNING",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "CRITICAL",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "DOWNTIME",
+              "fill": 2,
+              "linewidth": 0,
+              "steppedLine": true,
+              "yaxis": 2,
+              "zindex": -3
+            }
+          ],
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(icinga2.$hostname.services.disk.disk.perfdata.$disk.max, 7)"
+            },
+            {
+              "refId": "B",
+              "target": "alias(icinga2.$hostname.services.disk.disk.perfdata.$disk.value, 'free')"
+            },
+            {
+              "refId": "D",
+              "target": "alias(icinga2.$hostname.services.disk.disk.perfdata.$disk.warn, 'WARNING')"
+            },
+            {
+              "refId": "E",
+              "target": "alias(icinga2.$hostname.services.disk.disk.perfdata.$disk.crit, 'CRITICAL')"
+            },
+            {
+              "hide": false,
+              "refId": "F",
+              "target": "alias(asPercent(removeBelowValue(icinga2.$hostname.services.disk.disk.metadata.downtime_depth, 1), 1), 'DOWNTIME')"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Disk $disk",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "bytes",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": 100,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {
+            "CRITICAL": "#890F02",
+            "DOWNTIME": "#E0F9D7",
+            "WARNING": "#CCA300",
+            "critical": "#890F02",
+            "free": "#6ED0E0",
+            "load1": "#6ED0E0",
+            "load1-CRITICAL": "#890F02",
+            "load15": "#0A50A1",
+            "load15-CRITICAL": "#890F02",
+            "load15-WARNING": "#CCA300",
+            "load5": "#1F78C1",
+            "load5-CRITICAL": "#890F02",
+            "load5-WARNING": "#CCA300",
+            "max": "#0A437C",
+            "packetloss": "#7EB26D",
+            "removeAboveValue(icinga2.ubuntu.services.ping4.ping4.metadata.downtime_depth, 1)": "#E0F9D7",
+            "rta": "#70DBED",
+            "swap": "#1F78C1",
+            "users": "#1F78C1",
+            "warning": "#CCA300"
+          },
+          "bars": true,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "graphite",
+          "editable": true,
+          "error": false,
+          "fill": 8,
+          "grid": {},
+          "gridPos": {
+            "h": 7,
+            "w": 10,
+            "x": 10,
+            "y": 24
+          },
+          "hideTimeOverride": false,
+          "id": 8,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "hideEmpty": true,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": false,
+          "linewidth": 2,
+          "links": [],
+          "maxPerRow": 3,
+          "nullPointMode": "connected",
+          "paceLength": 10,
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [
+            {
+              "alias": "WARNING",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "CRITICAL",
+              "fill": 0,
+              "yaxis": 1
+            },
+            {
+              "alias": "DOWNTIME",
+              "fill": 2,
+              "linewidth": 0,
+              "steppedLine": true,
+              "yaxis": 2,
+              "zindex": -3
+            }
+          ],
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(icinga2.$hostname.services.users.users.perfdata.users.value, 6)"
+            },
+            {
+              "hide": false,
+              "refId": "D",
+              "target": "alias(asPercent(removeBelowValue(icinga2.$hostname.services.procs.procs.metadata.downtime_depth, 1), 1), 'DOWNTIME')"
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Users logged in",
+          "tooltip": {
+            "msResolution": false,
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": 100,
+              "min": null,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "Other metrics",
+      "type": "row"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 18,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": "graphite",
+        "definition": "icinga.*",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Hostname",
+        "multi": false,
+        "name": "hostname",
+        "options": [],
+        "query": "icinga.*",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tags": [],
+        "tagsQuery": null,
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "value",
+          "value": "value"
+        },
+        "datasource": "graphite",
+        "definition": "icinga.$hostname.host.perfdata.pl.*",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Packet loss",
+        "multi": false,
+        "name": "pl",
+        "options": [],
+        "query": "icinga.$hostname.host.perfdata.pl.*",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tags": [],
+        "tagsQuery": null,
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "value",
+          "value": "value"
+        },
+        "datasource": "graphite",
+        "definition": "icinga.$hostname.host.perfdata.rta.*",
+        "hide": 0,
+        "includeAll": true,
+        "label": "RTA",
+        "multi": false,
+        "name": "rta",
+        "options": [],
+        "query": "icinga.$hostname.host.perfdata.rta.*",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tags": [],
+        "tagsQuery": null,
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": "graphite",
+        "definition": "",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Disk",
+        "multi": false,
+        "name": "disk",
+        "options": [],
+        "query": "icinga2.$hostname.services.disk.disk.perfdata.*",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": null,
+        "tags": [],
+        "tagsQuery": null,
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "Icinga2 with Graphite",
+  "uid": "9jDVvzAZz",
+  "version": 7
+}
