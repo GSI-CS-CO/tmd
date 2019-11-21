@@ -14,9 +14,9 @@
   },
   "editable": true,
   "gnetId": null,
-  "graphTooltip": 0,
-  "id": 7,
-  "iteration": 1574175031292,
+  "graphTooltip": 1,
+  "id": 4,
+  "iteration": 1574326963955,
   "links": [],
   "panels": [
     {
@@ -27,9 +27,9 @@
         "x": 0,
         "y": 0
       },
-      "id": 7,
+      "id": 16,
       "panels": [],
-      "title": "Data Master",
+      "title": "GMT Gateways",
       "type": "row"
     },
     {
@@ -37,20 +37,22 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "description": "Message rate of data master\n(cpu0=SIS+HEST, cpu1=CRYRING, cpu2=ESR)",
+      "decimals": 5,
+      "description": "Operation rate",
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 18,
         "x": 0,
         "y": 1
       },
-      "id": 8,
+      "id": 21,
       "legend": {
         "avg": false,
         "current": true,
-        "max": false,
-        "min": false,
+        "max": true,
+        "min": true,
         "show": true,
         "total": false,
         "values": true
@@ -59,31 +61,30 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
       "paceLength": 10,
       "percentage": false,
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
+      "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(sortByMaxima(dm.$dm.cpu*.rate10s), 1, 2)"
-        },
-        {
-          "refCount": 0,
-          "refId": "B",
-          "target": "aliasByNode(dm.$dm.total.rate10s, 1, 2)"
+          "target": "aliasByNode(gw.*.$gw.rate10s, 1)"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "TX messages - $dm",
+      "title": "gateway operation rates - $gw",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -99,8 +100,166 @@
       },
       "yaxes": [
         {
+          "decimals": null,
           "format": "hertz",
-          "label": "message rate",
+          "label": "MIL events (SIS, ESR); injections (SIS18)",
+          "logBase": 10,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                36995
+              ],
+              "type": "lt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "min"
+            },
+            "type": "query"
+          },
+          {
+            "evaluator": {
+              "params": [
+                37005
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "or"
+            },
+            "query": {
+              "params": [
+                "A",
+                "5m",
+                "now"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "max"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "keep_state",
+        "for": "1m",
+        "frequency": "1m",
+        "handler": 1,
+        "message": "Offset alert from gateways",
+        "name": "Offset alert - Gateways",
+        "noDataState": "no_data",
+        "notifications": []
+      },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "decimals": 5,
+      "description": "Offset between TAI and UTC",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 6,
+        "x": 18,
+        "y": 1
+      },
+      "id": 18,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "paceLength": 10,
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(gw.*.*.offset, 1)"
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "lt",
+          "value": 36995,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "system time offset",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "decimals": null,
+          "format": "ms",
+          "label": "TAI - system time",
           "logBase": 1,
           "max": null,
           "min": null,
@@ -151,24 +310,25 @@
         "for": "1m",
         "frequency": "1m",
         "handler": 1,
-        "message": "WR sync alert from data master",
-        "name": "WR sync alert - data master",
+        "message": "WR sync alert from gateways",
+        "name": "WR sync alert - gateways",
         "noDataState": "keep_state",
         "notifications": []
       },
       "aliasColors": {},
       "bars": false,
+      "cacheTimeout": "120",
       "dashLength": 10,
       "dashes": false,
-      "description": "WR sync status\n(100=Tracking, 20=No sync, 0=other)",
+      "description": "WR sync status (100=Tracking, 20=No sync, 0=others)",
       "fill": 1,
       "gridPos": {
-        "h": 9,
+        "h": 6,
         "w": 6,
         "x": 18,
-        "y": 1
+        "y": 7
       },
-      "id": 11,
+      "id": 20,
       "legend": {
         "avg": false,
         "current": true,
@@ -192,8 +352,9 @@
       "steppedLine": false,
       "targets": [
         {
+          "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(dm.ZT00ZZ1.wr.status, 1)"
+          "target": "aliasByNode(gw.*.*.status, 1)"
         }
       ],
       "thresholds": [
@@ -226,7 +387,7 @@
       "yaxes": [
         {
           "format": "percent",
-          "label": "",
+          "label": null,
           "logBase": 1,
           "max": null,
           "min": null,
@@ -247,37 +408,26 @@
       }
     },
     {
-      "collapsed": false,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 10
-      },
-      "id": 4,
-      "panels": [],
-      "title": "Network Packets",
-      "type": "row"
-    },
-    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "description": "TX packet rate of clock master (WR switch)",
+      "decimals": 5,
+      "description": "Stall",
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
         "h": 9,
         "w": 18,
         "x": 0,
-        "y": 11
+        "y": 10
       },
-      "id": 2,
+      "id": 23,
       "legend": {
         "avg": false,
         "current": true,
         "max": true,
-        "min": false,
+        "min": true,
         "show": true,
         "total": false,
         "values": true
@@ -286,25 +436,30 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
       "paceLength": 10,
       "percentage": false,
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
+      "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
+          "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(nw.$cm.$cm_dl.$cm_dl_port.tx.rate10s, 1, 2, 3)"
+          "target": "aliasByNode(gw.*.$gw.stallact, 1)"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "TX packets @ layer 1 switch - $cm",
+      "title": "gateway eCPU stalls  - $gw",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -320,8 +475,9 @@
       },
       "yaxes": [
         {
-          "format": "hertz",
-          "label": "packet rate",
+          "decimals": null,
+          "format": "percent",
+          "label": "actual stall",
           "logBase": 1,
           "max": null,
           "min": null,
@@ -346,15 +502,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "description": "RX packet rate of clock master (WR switch)",
+      "decimals": 5,
+      "description": "Stall",
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
-        "h": 9,
+        "h": 6,
         "w": 6,
         "x": 18,
-        "y": 11
+        "y": 13
       },
-      "id": 19,
+      "id": 24,
       "legend": {
         "avg": false,
         "current": true,
@@ -368,25 +526,30 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
       "paceLength": 10,
       "percentage": false,
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
+      "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
+          "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(nw.$cm.$cm_dl.$cm_dl_port.rx.rate10s, 1, 2, 3)"
+          "target": "aliasByNode(gw.*.$gw.stallmax, 1)"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "RX packets @ layer 1 switch- $cm",
+      "title": "gateway eCPU stalls - $gw",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -402,9 +565,10 @@
       },
       "yaxes": [
         {
-          "format": "hertz",
-          "label": "packet rate",
-          "logBase": 10,
+          "decimals": null,
+          "format": "percent",
+          "label": "max stall (streak)",
+          "logBase": 1,
           "max": null,
           "min": null,
           "show": true
@@ -429,12 +593,251 @@
         "h": 1,
         "w": 24,
         "x": 0,
+        "y": 19
+      },
+      "id": 2,
+      "panels": [],
+      "title": "GMT Snooper",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "graphite",
+      "description": "Action counts",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
         "y": 20
       },
-      "id": 13,
-      "panels": [],
-      "title": "Network Messages",
-      "type": "row"
+      "id": 8,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "paceLength": 10,
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(tr.$tr.action, 1, 0)",
+          "textEditor": false
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "total messages - $tr",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "# of messages @ ECA output",
+          "logBase": 10,
+          "max": null,
+          "min": "auto",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "alert": {
+        "alertRuleTags": {},
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                0
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "3m",
+                "now-30s"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "sum"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "keep_state",
+        "for": "0m",
+        "frequency": "1m",
+        "handler": 1,
+        "message": "Late count alert from monitor timing receivers",
+        "name": "Late alert - monitoring nodes",
+        "noDataState": "no_data",
+        "notifications": []
+      },
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "graphite",
+      "description": "Late counts (ZT00ZM1, ZT00ZM2)",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 20
+      },
+      "id": 10,
+      "legend": {
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "paceLength": 10,
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "hide": true,
+          "refCount": 0,
+          "refId": "A",
+          "target": "nonNegativeDerivative(tr.*.late)"
+        },
+        {
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByNode(tr.*.late, 1)"
+        }
+      ],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 0,
+          "yaxis": "left"
+        }
+      ],
+      "timeFrom": null,
+      "timeRegions": [
+        {
+          "colorMode": "background6",
+          "fill": true,
+          "fillColor": "rgba(234, 112, 112, 0.12)",
+          "line": false,
+          "lineColor": "rgba(237, 46, 24, 0.60)",
+          "op": "time"
+        }
+      ],
+      "timeShift": null,
+      "title": "late messages - $tr",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": "# of messages @ ECA output",
+          "logBase": 10,
+          "max": null,
+          "min": "0",
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
     },
     {
       "alert": {
@@ -467,8 +870,8 @@
         "for": "0m",
         "frequency": "1m",
         "handler": 1,
-        "message": "Late alert from the PRO timing network",
-        "name": "Late alert - PRO network",
+        "message": "Early count alert from monitor timing receivers",
+        "name": "Early alert - monitoring nodes",
         "noDataState": "no_data",
         "notifications": []
       },
@@ -476,19 +879,21 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "description": "Number of the late actions in the PRO timing network",
+      "datasource": "graphite",
+      "description": "Early counts (ZT00ZM1, ZT00ZM2)",
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
-        "h": 9,
-        "w": 18,
-        "x": 0,
-        "y": 21
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 20
       },
-      "id": 18,
+      "id": 12,
       "legend": {
         "avg": false,
         "current": true,
-        "max": false,
+        "max": true,
         "min": false,
         "show": true,
         "total": false,
@@ -498,12 +903,16 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
       "paceLength": 10,
       "percentage": false,
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
+      "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
@@ -511,12 +920,12 @@
           "hide": true,
           "refCount": 0,
           "refId": "A",
-          "target": "nonNegativeDerivative(diag.PRO.*.*.nlate)"
+          "target": "nonNegativeDerivative(tr.*.early)"
         },
         {
           "refCount": 0,
           "refId": "B",
-          "target": "aliasByNode(diag.PRO.*.*.nlate, 2, 3)"
+          "target": "aliasByNode(tr.*.early, 1)"
         }
       ],
       "thresholds": [
@@ -532,7 +941,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "late messages at switch layer 1-3",
+      "title": "early messages - $tr",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -549,10 +958,10 @@
       "yaxes": [
         {
           "format": "short",
-          "label": "# of messages @ ECA input",
-          "logBase": 1,
+          "label": "# of messages @ ECA output",
+          "logBase": 10,
           "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -566,27 +975,65 @@
       ],
       "yaxis": {
         "align": false,
-        "alignLevel": null
+        "alignLevel": 0
       }
     },
     {
+      "alert": {
+        "conditions": [
+          {
+            "evaluator": {
+              "params": [
+                0
+              ],
+              "type": "gt"
+            },
+            "operator": {
+              "type": "and"
+            },
+            "query": {
+              "params": [
+                "A",
+                "3m",
+                "now-30s"
+              ]
+            },
+            "reducer": {
+              "params": [],
+              "type": "sum"
+            },
+            "type": "query"
+          }
+        ],
+        "executionErrorState": "keep_state",
+        "for": "0m",
+        "frequency": "1m",
+        "handler": 1,
+        "message": "Overflow count alert from monitor timing receivers",
+        "name": "Overflow alert - monitoring nodes",
+        "noDataState": "no_data",
+        "notifications": []
+      },
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "description": "Number of messages in the PRO timing network",
+      "datasource": "graphite",
+      "description": "Overflow counts (ZT00ZM1, ZT00ZM2)",
       "fill": 1,
+      "fillGradient": 0,
       "gridPos": {
-        "h": 9,
+        "h": 8,
         "w": 6,
         "x": 18,
-        "y": 21
+        "y": 20
       },
-      "id": 9,
+      "id": 14,
       "legend": {
         "avg": false,
         "current": true,
-        "max": false,
+        "hideEmpty": false,
+        "max": true,
         "min": false,
         "show": true,
         "total": false,
@@ -596,110 +1043,45 @@
       "linewidth": 1,
       "links": [],
       "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
       "paceLength": 10,
       "percentage": false,
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
+      "spaceLength": 10,
       "stack": false,
       "steppedLine": false,
       "targets": [
         {
+          "hide": true,
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(diag.PRO.*.*.nmess, 2, 3)"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "total messages at switch layer 1-3",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": "# of messages @ ECA input",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
+          "target": "nonNegativeDerivative(tr.*.overflow)"
         },
         {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "description": "Maximum difference between deadline and actual time",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 18,
-        "x": 0,
-        "y": 30
-      },
-      "id": 17,
-      "legend": {
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "paceLength": 10,
-      "percentage": false,
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
           "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode(diag.PRO.*.*.dtmin, 2, 3)",
-          "textEditor": false
+          "refId": "B",
+          "target": "aliasByNode(tr.*.overflow, 1)"
         }
       ],
-      "thresholds": [],
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 0,
+          "yaxis": "left"
+        }
+      ],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "minimum time budget at switch layer 1-3 (value > 600us: ok; in case of  a late message, the value is re-initialized)",
+      "title": "overflow messages - $tr",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -715,94 +1097,11 @@
       },
       "yaxes": [
         {
-          "format": "µs",
-          "label": "time til deadline @ ECA input",
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
           "format": "short",
-          "label": null,
-          "logBase": 1,
+          "label": "# of lost messages @ ECA Q",
+          "logBase": 10,
           "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "description": "Average difference between deadline and actual time",
-      "fill": 1,
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 18,
-        "y": 30
-      },
-      "id": 16,
-      "legend": {
-        "avg": false,
-        "current": true,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "paceLength": 10,
-      "percentage": false,
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode(diag.PRO.*.*.dtave, 2, 3)"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "average time budget at switch layer 1-3",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "µs",
-          "label": "time til deadline @ ECA input",
-          "logBase": 1,
-          "max": null,
-          "min": null,
+          "min": "0",
           "show": true
         },
         {
@@ -829,14 +1128,103 @@
       {
         "allValue": null,
         "current": {
+          "tags": [],
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": "graphite",
+        "definition": "gw.*.scu*",
+        "hide": 0,
+        "includeAll": true,
+        "label": null,
+        "multi": false,
+        "name": "gw",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "scuxl0068",
+            "value": "scuxl0068"
+          },
+          {
+            "selected": false,
+            "text": "scuxl0223",
+            "value": "scuxl0223"
+          },
+          {
+            "selected": false,
+            "text": "scuxl0228",
+            "value": "scuxl0228"
+          }
+        ],
+        "query": "gw.*.scu*",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": "graphite",
+        "definition": "tr.ZT00ZM*",
+        "hide": 0,
+        "includeAll": true,
+        "label": null,
+        "multi": false,
+        "name": "tr",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "ZT00ZM01",
+            "value": "ZT00ZM01"
+          },
+          {
+            "selected": false,
+            "text": "ZT00ZM02",
+            "value": "ZT00ZM02"
+          }
+        ],
+        "query": "tr.ZT00ZM*",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
           "text": "nwt0013m66",
           "value": "nwt0013m66"
         },
         "datasource": "graphite",
         "definition": "nw.*",
         "hide": 0,
-        "includeAll": false,
-        "label": "",
+        "includeAll": true,
+        "label": null,
         "multi": false,
         "name": "cm",
         "options": [],
@@ -861,7 +1249,7 @@
         "definition": "nw.*.*",
         "hide": 0,
         "includeAll": true,
-        "label": "",
+        "label": "cm_downlink",
         "multi": false,
         "name": "cm_dl",
         "options": [],
@@ -886,36 +1274,11 @@
         "definition": "nw.*.*.*",
         "hide": 0,
         "includeAll": true,
-        "label": "",
+        "label": "cm_downlink",
         "multi": false,
         "name": "cm_dl_port",
         "options": [],
         "query": "nw.*.*.*",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": null,
-        "current": {
-          "text": "ZT00ZZ1",
-          "value": "ZT00ZZ1"
-        },
-        "datasource": "graphite",
-        "definition": "dm.ZT*",
-        "hide": 0,
-        "includeAll": false,
-        "label": "",
-        "multi": false,
-        "name": "dm",
-        "options": [],
-        "query": "dm.ZT*",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -958,7 +1321,7 @@
     ]
   },
   "timezone": "",
-  "title": "GMT Data Master & Network (PRO)",
-  "uid": "vtuC9m1Zk",
-  "version": 53
+  "title": "GMT Gateways & Snooper (PRO)",
+  "uid": "FYTGfkAWz",
+  "version": 41
 }

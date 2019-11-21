@@ -25,13 +25,13 @@
       "description": "Alerts from GMT",
       "folderId": 0,
       "gridPos": {
-        "h": 14,
-        "w": 13,
+        "h": 27,
+        "w": 14,
         "x": 0,
         "y": 0
       },
       "id": 2,
-      "limit": 10,
+      "limit": "30",
       "links": [],
       "nameFilter": "",
       "onlyAlertsOnDashboard": false,
@@ -84,5 +84,5 @@
   "timezone": "",
   "title": "GMT Alerts",
   "uid": "VcUn07JWk",
-  "version": 4
+  "version": 5
 }
