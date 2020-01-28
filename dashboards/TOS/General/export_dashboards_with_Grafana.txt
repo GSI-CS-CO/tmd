@@ -1,0 +1,19 @@
+Instructions on how to export dashboards by using Grafana GUI (Grafana v6.0.2 (3f4c2e7))
+
+1. Go to a desired dashboard
+
+2. Click on 'Share dashboard'
+
+3. In the 'Share' window select 'Export' and click on 'Save to file'
+
+This will save the current dashboard into JSON file.
+
+-------------------------------------------------------------------------
+Remark: Export with HTTP API fails by returning message below (curl):
+
+curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: https://curl.haxx.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.
