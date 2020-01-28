@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 10,
-  "iteration": 1574325860066,
+  "iteration": 1580228978003,
   "links": [],
   "panels": [
     {
@@ -1018,8 +1018,9 @@
       {
         "allValue": null,
         "current": {
-          "text": "nwt0122m66",
-          "value": "nwt0122m66"
+          "tags": [],
+          "text": "nwt0285m66",
+          "value": "nwt0285m66"
         },
         "datasource": "graphite",
         "definition": "uni.nw.*",
@@ -1149,5 +1150,5 @@
   "timezone": "",
   "title": "GMT UNILAC",
   "uid": "Y58FISbWk",
-  "version": 10
+  "version": 12
 }
