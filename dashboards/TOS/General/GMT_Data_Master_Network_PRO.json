@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 7,
-  "iteration": 1574326918684,
+  "iteration": 1599498547482,
   "links": [],
   "panels": [
     {
@@ -297,14 +297,14 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(nw.$cm.$cm_dl.$cm_dl_port.tx.rate10s, 1, 2, 3)"
+          "target": "aliasByNode(nw.$lm.$lm_dl.$lm_dl_port.tx.rate10s, 1, 2, 3)"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "TX packets @ layer 1 switch - $cm",
+      "title": "TX packets @ layer 1 switch - $lm",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -379,14 +379,14 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(nw.$cm.$cm_dl.$cm_dl_port.rx.rate10s, 1, 2, 3)"
+          "target": "aliasByNode(nw.$lm.$lm_dl.$lm_dl_port.rx.rate10s, 1, 2, 3)"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "RX packets @ layer 1 switch- $cm",
+      "title": "RX packets @ layer 1 switch- $lm",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -829,16 +829,16 @@
       {
         "allValue": null,
         "current": {
-          "text": "nwt0013m66",
-          "value": "nwt0013m66"
+          "text": "nwt0284m66",
+          "value": "nwt0284m66"
         },
         "datasource": "graphite",
         "definition": "nw.*",
         "hide": 0,
         "includeAll": false,
-        "label": "",
+        "label": "localmaster",
         "multi": false,
-        "name": "cm",
+        "name": "lm",
         "options": [],
         "query": "nw.*",
         "refresh": 1,
@@ -861,9 +861,9 @@
         "definition": "nw.*.*",
         "hide": 0,
         "includeAll": true,
-        "label": "",
+        "label": "localmaster down-link",
         "multi": false,
-        "name": "cm_dl",
+        "name": "lm_dl",
         "options": [],
         "query": "nw.*.*",
         "refresh": 1,
@@ -886,9 +886,9 @@
         "definition": "nw.*.*.*",
         "hide": 0,
         "includeAll": true,
-        "label": "",
+        "label": "localmaster down-link ports",
         "multi": false,
-        "name": "cm_dl_port",
+        "name": "lm_dl_port",
         "options": [],
         "query": "nw.*.*.*",
         "refresh": 1,
@@ -960,5 +960,5 @@
   "timezone": "",
   "title": "GMT Data Master & Network (PRO)",
   "uid": "vtuC9m1Zk",
-  "version": 54
+  "version": 57
 }
