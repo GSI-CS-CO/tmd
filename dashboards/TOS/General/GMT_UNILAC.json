@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 10,
-  "iteration": 1580228978003,
+  "iteration": 1599657508099,
   "links": [],
   "panels": [
     {
@@ -442,7 +442,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "description": "TX packet rate of clock master (WR switch)",
+      "description": "TX packet rate of the localmaster WRS",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -480,14 +480,14 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(uni.nw.$cm.$cm_dl.$cm_dl_port.tx.rate10s, 2, 3, 4)"
+          "target": "aliasByNode(uni.nw.$lm.$lm_dl.$lm_dl_port.tx.rate10s, 2, 3, 4)"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "TX packets @ layer 1 switch - $cm",
+      "title": "TX packets @ layer 1 switch - $lm",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -529,7 +529,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "description": "RX packet rate of clock master (WR switch)",
+      "description": "RX packet rate of the localmaster WRS",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -567,14 +567,14 @@
       "targets": [
         {
           "refId": "A",
-          "target": "aliasByNode(uni.nw.$cm.$cm_dl.$cm_dl_port.rx.rate10s, 2, 3, 4)"
+          "target": "aliasByNode(uni.nw.$lm.$lm_dl.$lm_dl_port.rx.rate10s, 2, 3, 4)"
         }
       ],
       "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "RX packets @ layer 1 switch- $cm",
+      "title": "RX packets @ layer 1 switch- $lm",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1018,17 +1018,16 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
-          "text": "nwt0285m66",
-          "value": "nwt0285m66"
+          "text": "nwt0083m66",
+          "value": "nwt0083m66"
         },
         "datasource": "graphite",
         "definition": "uni.nw.*",
         "hide": 0,
         "includeAll": false,
-        "label": "",
+        "label": "localmaster",
         "multi": false,
-        "name": "cm",
+        "name": "lm",
         "options": [],
         "query": "uni.nw.*",
         "refresh": 1,
@@ -1051,9 +1050,9 @@
         "definition": "uni.nw.*.*",
         "hide": 0,
         "includeAll": true,
-        "label": "",
+        "label": "localmaster downlink",
         "multi": false,
-        "name": "cm_dl",
+        "name": "lm_dl",
         "options": [],
         "query": "uni.nw.*.*",
         "refresh": 1,
@@ -1076,9 +1075,9 @@
         "definition": "uni.nw.*.*.*",
         "hide": 0,
         "includeAll": true,
-        "label": "",
+        "label": "localmaster downlik ports",
         "multi": false,
-        "name": "cm_dl_port",
+        "name": "lm_dl_port",
         "options": [],
         "query": "uni.nw.*.*.*",
         "refresh": 1,
@@ -1150,5 +1149,5 @@
   "timezone": "",
   "title": "GMT UNILAC",
   "uid": "Y58FISbWk",
-  "version": 12
+  "version": 16
 }
