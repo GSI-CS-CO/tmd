@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 7,
-  "iteration": 1599498547482,
+  "iteration": 1599657773400,
   "links": [],
   "panels": [
     {
@@ -264,7 +264,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "description": "TX packet rate of clock master (WR switch)",
+      "description": "TX packet rate of the localmaster WRS",
       "fill": 1,
       "gridPos": {
         "h": 9,
@@ -346,7 +346,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "description": "RX packet rate of clock master (WR switch)",
+      "description": "RX packet rate of the localmaster WRS",
       "fill": 1,
       "gridPos": {
         "h": 9,
@@ -960,5 +960,5 @@
   "timezone": "",
   "title": "GMT Data Master & Network (PRO)",
   "uid": "vtuC9m1Zk",
-  "version": 57
+  "version": 58
 }
