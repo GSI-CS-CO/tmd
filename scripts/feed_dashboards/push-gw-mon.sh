@@ -54,8 +54,17 @@ METRIC_KEYS=($OFFSET $SYNC $STALLMAX $STALLACT $RATE10S)
 # check if files with monitoring data exist
 for i in 0 1 2; do
 	GW=GW$i
-	GWNODE=NODEGW$i
-	GW_ARRAY[$i]="${!GW}:${!GWNODE}"
+
+	GWNODE='node'
+
+        FILE_PATH=$MONDATA_DIR/${!GW}/node
+        if [ -f $FILE_PATH ]; then
+            GWNODE=$(cat $FILE_PATH)
+        else
+            echo "file not found: $FILE_PATH"
+        fi
+
+	GW_ARRAY[$i]="${!GW}:$GWNODE"
 
 	for key in "${METRIC_KEYS[@]}"; do
 		FILE_PATH=$MONDATA_DIR/${!GW}/$key
