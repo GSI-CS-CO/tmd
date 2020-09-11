@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 1,
   "id": 4,
-  "iteration": 1574326963955,
+  "iteration": 1599844296193,
   "links": [],
   "panels": [
     {
@@ -241,7 +241,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "system time offset",
+      "title": "system time offset (includes latency)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1213,81 +1213,6 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
-      },
-      {
-        "allValue": null,
-        "current": {
-          "text": "nwt0013m66",
-          "value": "nwt0013m66"
-        },
-        "datasource": "graphite",
-        "definition": "nw.*",
-        "hide": 0,
-        "includeAll": true,
-        "label": null,
-        "multi": false,
-        "name": "cm",
-        "options": [],
-        "query": "nw.*",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": null,
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
-        "datasource": "graphite",
-        "definition": "nw.*.*",
-        "hide": 0,
-        "includeAll": true,
-        "label": "cm_downlink",
-        "multi": false,
-        "name": "cm_dl",
-        "options": [],
-        "query": "nw.*.*",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "allValue": null,
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
-        "datasource": "graphite",
-        "definition": "nw.*.*.*",
-        "hide": 0,
-        "includeAll": true,
-        "label": "cm_downlink",
-        "multi": false,
-        "name": "cm_dl_port",
-        "options": [],
-        "query": "nw.*.*.*",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tags": [],
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
       }
     ]
   },
@@ -1323,5 +1248,5 @@
   "timezone": "",
   "title": "GMT Gateways & Snooper (PRO)",
   "uid": "FYTGfkAWz",
-  "version": 41
+  "version": 45
 }
