@@ -14,7 +14,7 @@
   },
   "editable": true,
   "gnetId": null,
-  "graphTooltip": 0,
+  "graphTooltip": 1,
   "id": 9,
   "links": [],
   "panels": [
@@ -70,6 +70,7 @@
       "legend": {
         "avg": false,
         "current": true,
+        "hideEmpty": true,
         "max": false,
         "min": false,
         "show": true,
@@ -168,6 +169,7 @@
       "legend": {
         "avg": false,
         "current": true,
+        "hideEmpty": true,
         "max": false,
         "min": false,
         "show": true,
@@ -251,6 +253,7 @@
       "legend": {
         "avg": false,
         "current": true,
+        "hideEmpty": true,
         "max": false,
         "min": false,
         "show": true,
@@ -335,6 +338,7 @@
       "legend": {
         "avg": false,
         "current": true,
+        "hideEmpty": true,
         "max": false,
         "min": false,
         "show": true,
@@ -479,6 +483,7 @@
       "legend": {
         "avg": false,
         "current": true,
+        "hideEmpty": true,
         "max": true,
         "min": true,
         "show": true,
@@ -521,7 +526,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "system time offset",
+      "title": "system time offset (includes latency)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -612,6 +617,7 @@
       "legend": {
         "avg": false,
         "current": true,
+        "hideEmpty": true,
         "max": false,
         "min": false,
         "show": true,
@@ -727,5 +733,5 @@
   "timezone": "",
   "title": "GMT Diagnostic (PRO, INT, DEV, UNI)",
   "uid": "4YBcNb1Wz",
-  "version": 20
+  "version": 23
 }
