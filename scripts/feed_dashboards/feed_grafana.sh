@@ -9,18 +9,23 @@ if [ -z "$TOS_GRAFANA_HOST" ]; then
     exit 1
 fi
 
+# list of push scripts
+LIST_PUSH_SCRIPTS=(push-dm-mon.sh
+push-prod-lm-mon.sh
+push-gw-mon.sh
+push-tr-mon.sh
+push-diag-mon.sh
+push-uni-mon.sh
+)
+
 # Terminate running scripts
-killall push-dm-mon.sh
-killall push-prod-lm-mon.sh
-killall push-gw-mon.sh
-killall push-tr-mon.sh
-killall push-diag-mon.sh
-killall push-uni-mon.sh
+for item in ${LIST_PUSH_SCRIPTS[@]}; do
+    killall $item
+done
 
 # Start scripts
-push-dm-mon.sh $TOS_GRAFANA_HOST &
-push-prod-lm-mon.sh $TOS_GRAFANA_HOST &
-push-gw-mon.sh $TOS_GRAFANA_HOST &
-push-tr-mon.sh $TOS_GRAFANA_HOST &
-push-diag-mon.sh $TOS_GRAFANA_HOST &
-push-uni-mon.sh $TOS_GRAFANA_HOST &
+for item in ${LIST_PUSH_SCRIPTS[@]}; do
+    if [ -f $item ]; then
+        eval "./$item $TOS_GRAFANA_HOST &"
+    fi
+done
