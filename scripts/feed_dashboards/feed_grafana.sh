@@ -16,6 +16,7 @@ push-gw-mon.sh
 push-tr-mon.sh
 push-diag-mon.sh
 push-uni-mon.sh
+push-gm-diag.sh
 )
 
 # Terminate running scripts
