@@ -3,25 +3,38 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
         "type": "dashboard"
       }
     ]
   },
   "editable": true,
-  "gnetId": null,
+  "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 8,
+  "id": 6,
   "links": [],
+  "liveNow": false,
   "panels": [
     {
       "dashboardFilter": "",
       "dashboardTags": [],
-      "datasource": "-- Dashboard --",
+      "datasource": {
+        "type": "datasource",
+        "uid": "-- Dashboard --"
+      },
       "description": "Alerts from GMT",
       "folderId": 0,
       "gridPos": {
@@ -35,18 +48,40 @@
       "links": [],
       "nameFilter": "",
       "onlyAlertsOnDashboard": false,
-      "options": {},
+      "options": {
+        "alertInstanceLabelFilter": "",
+        "alertName": "",
+        "dashboardAlerts": false,
+        "groupBy": [],
+        "groupMode": "default",
+        "maxItems": 20,
+        "sortOrder": 1,
+        "stateFilter": {
+          "error": true,
+          "firing": true,
+          "noData": false,
+          "normal": false,
+          "pending": true
+        }
+      },
       "show": "current",
       "sortOrder": 1,
       "stateFilter": [],
-      "timeFrom": null,
-      "timeShift": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "-- Dashboard --"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Alerts",
       "type": "alertlist"
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 18,
+  "schemaVersion": 36,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -84,5 +119,6 @@
   "timezone": "",
   "title": "GMT Alerts",
   "uid": "VcUn07JWk",
-  "version": 5
+  "version": 3,
+  "weekStart": ""
 }
