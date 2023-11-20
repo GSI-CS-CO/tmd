@@ -1,0 +1,1033 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "WRS status monitored by Icinga",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 8,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "FPGA temperature of WR switches monitored by Icinga",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 2,
+      "legend": {
+        "avg": true,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "9.0.9",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "aliasByNode(icinga.$BG2_R54.Temperature.perfdata.sensor.fpga.value, 1)"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "WRS FPGA temperature (BG2 R54)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1170",
+          "format": "short",
+          "label": "temperature (°C)",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1171",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "FPGA temperature of WR switches monitored by Icinga",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "hiddenSeries": false,
+      "id": 5,
+      "legend": {
+        "avg": true,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "9.0.9",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "aliasByNode(icinga.$BG2_R56.Temperature.perfdata.sensor.fpga.value, 1)"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "WRS FPGA temperature (BG2 R56)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1170",
+          "format": "short",
+          "label": "temperature (°C)",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1171",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "FPGA temperature of WR switches monitored by Icinga",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "hiddenSeries": false,
+      "id": 8,
+      "legend": {
+        "avg": true,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "9.0.9",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "aliasByNode(icinga.$LSB6_R1.Temperature.perfdata.sensor.fpga.value, 1)"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "WRS FPGA temperature (LSB6 R1)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1170",
+          "format": "short",
+          "label": "temperature (°C)",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1171",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "FPGA temperature of WR switches monitored by Icinga",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 27
+      },
+      "hiddenSeries": false,
+      "id": 6,
+      "legend": {
+        "avg": true,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "9.0.9",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "aliasByNode(icinga.$prod_wrs.Temperature.perfdata.sensor.fpga.value, 1)"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "WRS FPGA temperature (Production)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1170",
+          "format": "short",
+          "label": "temperature (°C)",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1171",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "FPGA temperature of WR switches monitored by Icinga",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 36
+      },
+      "hiddenSeries": false,
+      "id": 7,
+      "legend": {
+        "avg": true,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "9.0.9",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "aliasByNode(icinga.$unilac_wrs.Temperature.perfdata.sensor.fpga.value, 1)"
+        }
+      ],
+      "thresholds": [],
+      "timeRegions": [],
+      "title": "WRS FPGA temperature (UNILAC)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "mode": "time",
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1170",
+          "format": "short",
+          "label": "temperature (°C)",
+          "logBase": 1,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1171",
+          "format": "short",
+          "logBase": 1,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false
+      }
+    }
+  ],
+  "refresh": "1m",
+  "schemaVersion": 36,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "nwt0024m66",
+          "value": "nwt0024m66"
+        },
+        "datasource": {
+          "type": "graphite",
+          "uid": "266gReNVk"
+        },
+        "definition": "icinga.nwt*",
+        "hide": 2,
+        "includeAll": true,
+        "multi": false,
+        "name": "wrs",
+        "options": [],
+        "query": "icinga.nwt*",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "prod_wrs",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0013m66",
+            "value": "nwt0013m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0014m66",
+            "value": "nwt0014m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0021m66",
+            "value": "nwt0021m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0022m66",
+            "value": "nwt0022m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0024m66",
+            "value": "nwt0024m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0026m66",
+            "value": "nwt0026m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0028m66",
+            "value": "nwt0028m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0032m66",
+            "value": "nwt0032m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0038m66",
+            "value": "nwt0038m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0039m66",
+            "value": "nwt0039m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0041m66",
+            "value": "nwt0041m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0047m66",
+            "value": "nwt0047m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0048m66",
+            "value": "nwt0048m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0076m66",
+            "value": "nwt0076m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0081m66",
+            "value": "nwt0081m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0078m66",
+            "value": "nwt0078m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0079m66",
+            "value": "nwt0079m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0077m66",
+            "value": "nwt0077m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0082m66",
+            "value": "nwt0082m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0084m66",
+            "value": "nwt0084m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0085m66",
+            "value": "nwt0085m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0086m66",
+            "value": "nwt0086m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0087m66",
+            "value": "nwt0087m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0088m66",
+            "value": "nwt0088m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0089m66",
+            "value": "nwt0089m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0090m66",
+            "value": "nwt0090m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0091m66",
+            "value": "nwt0091m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0092m66",
+            "value": "nwt0092m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0093m66",
+            "value": "nwt0093m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0094m66",
+            "value": "nwt0094m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0095m66",
+            "value": "nwt0095m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0096m66",
+            "value": "nwt0096m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0097m66",
+            "value": "nwt0097m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0098m66",
+            "value": "nwt0098m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0099m66",
+            "value": "nwt0099m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0110m66",
+            "value": "nwt0110m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0113m66",
+            "value": "nwt0113m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0117m66",
+            "value": "nwt0117m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0122m66",
+            "value": "nwt0122m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0226m66",
+            "value": "nwt0226m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0272m66",
+            "value": "nwt0272m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0273m66",
+            "value": "nwt0273m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0275m66",
+            "value": "nwt0275m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0277m66",
+            "value": "nwt0277m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0284m66",
+            "value": "nwt0284m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0287m66",
+            "value": "nwt0287m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0300m66",
+            "value": "nwt0300m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0318m66",
+            "value": "nwt0318m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0323m66",
+            "value": "nwt0323m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0324m66",
+            "value": "nwt0324m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0468m66",
+            "value": "nwt0468m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0474m66",
+            "value": "nwt0474m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0475m66",
+            "value": "nwt0475m66"
+          }
+        ],
+        "query": "nwt0013m66, nwt0014m66, nwt0021m66, nwt0022m66, nwt0024m66, nwt0026m66, nwt0028m66, nwt0032m66, nwt0038m66, nwt0039m66, nwt0041m66, nwt0047m66, nwt0048m66, nwt0076m66, nwt0081m66, nwt0078m66, nwt0079m66, nwt0077m66, nwt0082m66, nwt0084m66, nwt0085m66, nwt0086m66, nwt0087m66, nwt0088m66, nwt0089m66, nwt0090m66, nwt0091m66, nwt0092m66, nwt0093m66, nwt0094m66, nwt0095m66, nwt0096m66, nwt0097m66, nwt0098m66, nwt0099m66, nwt0110m66, nwt0113m66, nwt0117m66, nwt0122m66, nwt0226m66, nwt0272m66, nwt0273m66, nwt0275m66, nwt0277m66, nwt0284m66, nwt0287m66, nwt0300m66, nwt0318m66, \nnwt0323m66, nwt0324m66, nwt0468m66, nwt0474m66, \nnwt0475m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "unilac_wrs",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0036m66",
+            "value": "nwt0036m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0083m66",
+            "value": "nwt0083m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0100m66",
+            "value": "nwt0100m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0108m66",
+            "value": "nwt0108m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0285m66",
+            "value": "nwt0285m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0291m66",
+            "value": "nwt0291m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0292m66",
+            "value": "nwt0292m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0293m66",
+            "value": "nwt0293m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0294m66",
+            "value": "nwt0294m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0302m66",
+            "value": "nwt0302m66"
+          }
+        ],
+        "query": "nwt0036m66, nwt0083m66, nwt0100m66, nwt0108m66, nwt0285m66, nwt0291m66, nwt0292m66, nwt0293m66, nwt0294m66, nwt0302m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        },
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "BG2_R54",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0013m66",
+            "value": "nwt0013m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0029m66",
+            "value": "nwt0029m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0037m66",
+            "value": "nwt0037m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0082m66",
+            "value": "nwt0082m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0083m66",
+            "value": "nwt0083m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0283m66",
+            "value": "nwt0283m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt02843m66",
+            "value": "nwt02843m66"
+          }
+        ],
+        "query": "nwt0013m66, nwt0029m66, nwt0037m66, nwt0082m66, nwt0083m66, nwt0283m66, nwt02843m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        },
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "BG2_R56",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0014m66",
+            "value": "nwt0014m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0021m66",
+            "value": "nwt0021m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0024m66",
+            "value": "nwt0024m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0076m66",
+            "value": "nwt0076m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0078m66",
+            "value": "nwt0078m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0079m66",
+            "value": "nwt0079m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0077m66",
+            "value": "nwt0077m66"
+          }
+        ],
+        "query": "nwt0014m66, nwt0021m66, nwt0024m66, nwt0076m66, nwt0078m66, nwt0079m66, nwt0077m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "allValue": "",
+        "current": {
+          "selected": true,
+          "text": "All",
+          "value": "$__all"
+        },
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "LSB6_R1",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0045m66",
+            "value": "nwt0045m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0100m66",
+            "value": "nwt0100m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0285m66",
+            "value": "nwt0285m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0467m66",
+            "value": "nwt0467m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0474m66",
+            "value": "nwt0474m66"
+          }
+        ],
+        "query": "nwt0045m66, nwt0100m66, nwt0285m66, nwt0467m66, nwt0474m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-2d",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "GMT WRS (Icinga)",
+  "uid": "Tzjg9n9Vz",
+  "version": 19,
+  "weekStart": ""
+}
