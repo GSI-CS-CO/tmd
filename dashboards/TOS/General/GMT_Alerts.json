@@ -50,8 +50,8 @@
       "onlyAlertsOnDashboard": false,
       "options": {
         "alertInstanceLabelFilter": "",
-        "alertName": "",
         "dashboardAlerts": false,
+        "folder": "",
         "groupBy": [],
         "groupMode": "default",
         "maxItems": 20,
@@ -59,10 +59,11 @@
         "stateFilter": {
           "error": true,
           "firing": true,
-          "noData": false,
-          "normal": false,
+          "noData": true,
+          "normal": true,
           "pending": true
-        }
+        },
+        "viewMode": "list"
       },
       "show": "current",
       "sortOrder": 1,
@@ -81,7 +82,7 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 36,
+  "schemaVersion": 37,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -119,6 +120,6 @@
   "timezone": "",
   "title": "GMT Alerts",
   "uid": "VcUn07JWk",
-  "version": 3,
+  "version": 4,
   "weekStart": ""
 }
