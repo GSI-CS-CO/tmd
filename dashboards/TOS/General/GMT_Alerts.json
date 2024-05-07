@@ -50,6 +50,7 @@
       "onlyAlertsOnDashboard": false,
       "options": {
         "alertInstanceLabelFilter": "",
+        "alertName": "",
         "dashboardAlerts": false,
         "folder": "",
         "groupBy": [],

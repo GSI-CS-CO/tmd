@@ -30,6 +30,119 @@
   "liveNow": false,
   "panels": [
     {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "wri15: access, BOOTP\nwri13: trunk, tsl101\nwri17: access, tsl101",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "rate, packets/s",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 10,
+      "options": {
+        "legend": {
+          "calcs": [
+            "mean"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.wri13.out.value), 4)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.wri15.out.value), 4)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "C",
+          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.wri17.out.value), 4)"
+        }
+      ],
+      "title": "TX packet rate, Service WRS (nwt0318m66)",
+      "type": "timeseries"
+    },
+    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -45,7 +158,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 9
       },
       "hiddenSeries": false,
       "id": 2,
@@ -65,7 +178,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.9",
+      "pluginVersion": "9.2.10",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -132,7 +245,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 18
       },
       "hiddenSeries": false,
       "id": 5,
@@ -152,7 +265,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.9",
+      "pluginVersion": "9.2.10",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -219,7 +332,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 27
       },
       "hiddenSeries": false,
       "id": 8,
@@ -239,7 +352,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.9",
+      "pluginVersion": "9.2.10",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -306,7 +419,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 6,
@@ -326,7 +439,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.9",
+      "pluginVersion": "9.2.10",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -393,7 +506,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 45
       },
       "hiddenSeries": false,
       "id": 7,
@@ -413,7 +526,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "9.0.9",
+      "pluginVersion": "9.2.10",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -466,7 +579,7 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 36,
+  "schemaVersion": 37,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -1028,6 +1141,6 @@
   "timezone": "",
   "title": "GMT WRS (Icinga)",
   "uid": "Tzjg9n9Vz",
-  "version": 19,
+  "version": 21,
   "weekStart": ""
 }
