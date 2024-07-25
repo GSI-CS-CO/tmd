@@ -133,6 +133,46 @@
           "refCount": 0,
           "refId": "C",
           "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.wri17.out.value), 4)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "D",
+          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.txf.13.value), 4, 5)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "E",
+          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.txf.15.value), 4, 5)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "G",
+          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.txf.16.value), 4, 5)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "F",
+          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.txf.17.value), 4, 5)"
         }
       ],
       "title": "TX packet rate, Service WRS (nwt0318m66)",
@@ -466,8 +506,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -560,8 +599,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1172,6 +1210,6 @@
   "timezone": "",
   "title": "GMT WRS (Icinga)",
   "uid": "Tzjg9n9Vz",
-  "version": 22,
+  "version": 27,
   "weekStart": ""
 }
