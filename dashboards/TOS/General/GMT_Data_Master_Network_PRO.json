@@ -789,8 +789,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -882,8 +881,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -1077,6 +1075,6 @@
   "timezone": "",
   "title": "GMT Data Master & Network (PRO)",
   "uid": "vtuC9m1Zk",
-  "version": 8,
+  "version": 10,
   "weekStart": ""
 }

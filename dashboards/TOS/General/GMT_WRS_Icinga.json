@@ -1199,6 +1199,82 @@
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "ntw0009m66",
+          "value": "ntw0009m66"
+        },
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "ttf_wrs",
+        "options": [
+          {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": true,
+            "text": "ntw0009m66",
+            "value": "ntw0009m66"
+          },
+          {
+            "selected": false,
+            "text": "ntw0010m66",
+            "value": "ntw0010m66"
+          },
+          {
+            "selected": false,
+            "text": "ntw0011m66",
+            "value": "ntw0011m66"
+          },
+          {
+            "selected": false,
+            "text": "ntw0016m66",
+            "value": "ntw0016m66"
+          },
+          {
+            "selected": false,
+            "text": "ntw0018m66",
+            "value": "ntw0018m66"
+          },
+          {
+            "selected": false,
+            "text": "ntw0025m66",
+            "value": "ntw0025m66"
+          },
+          {
+            "selected": false,
+            "text": "ntw0049m66",
+            "value": "ntw0049m66"
+          },
+          {
+            "selected": false,
+            "text": "ntw0050m66",
+            "value": "ntw0050m66"
+          },
+          {
+            "selected": false,
+            "text": "ntw0296m66",
+            "value": "ntw0296m66"
+          },
+          {
+            "selected": false,
+            "text": "ntw0297m66",
+            "value": "ntw0297m66"
+          },
+          {
+            "selected": false,
+            "text": "ntw0469m66",
+            "value": "ntw0469m66"
+          }
+        ],
+        "query": "ntw0009m66, ntw0010m66, ntw0011m66, ntw0016m66, ntw0018m66, ntw0025m66, ntw0049m66, ntw0050m66, ntw0296m66, ntw0297m66, ntw0469m66",
+        "skipUrlSync": false,
+        "type": "custom"
       }
     ]
   },
@@ -1210,6 +1286,6 @@
   "timezone": "",
   "title": "GMT WRS (Icinga)",
   "uid": "Tzjg9n9Vz",
-  "version": 27,
+  "version": 29,
   "weekStart": ""
 }
