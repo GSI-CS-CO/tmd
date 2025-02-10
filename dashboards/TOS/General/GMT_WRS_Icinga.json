@@ -34,7 +34,7 @@
         "type": "graphite",
         "uid": "266gReNVk"
       },
-      "description": "Top 5 WRSs that have the highest FPGA temperature value",
+      "description": "Top 10 WRSs that have the highest FPGA temperature value",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -119,7 +119,7 @@
             "uid": "266gReNVk"
           },
           "refId": "A",
-          "target": "highestMax(aliasByNode(icinga.$prod_wrs.Temperature.perfdata.sensor.fpga.value, 1), 5)"
+          "target": "highestMax(aliasByNode(icinga.$prod_wrs.Temperature.perfdata.sensor.fpga.value, 1), 10)"
         }
       ],
       "title": "WRS FPGA temperature (Production)",
@@ -365,8 +365,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "dark-red",
@@ -461,8 +460,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -508,160 +506,9 @@
       ],
       "title": "WRS FPGA temperature (LSB6 R1)",
       "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "graphite",
-        "uid": "266gReNVk"
-      },
-      "description": "wri15: access, BOOTP\nwri13: trunk, tsl101\nwri17: access, tsl101",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "rate, packets/s",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 24,
-        "x": 0,
-        "y": 45
-      },
-      "id": 10,
-      "options": {
-        "legend": {
-          "calcs": [
-            "mean"
-          ],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.wri13.out.value), 4)"
-        },
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "hide": false,
-          "refCount": 0,
-          "refId": "B",
-          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.wri15.out.value), 4)"
-        },
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "hide": false,
-          "refCount": 0,
-          "refId": "C",
-          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.wri17.out.value), 4)"
-        },
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "hide": false,
-          "refCount": 0,
-          "refId": "D",
-          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.txf.13.value), 4, 5)"
-        },
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "hide": false,
-          "refCount": 0,
-          "refId": "E",
-          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.txf.15.value), 4, 5)"
-        },
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "hide": false,
-          "refCount": 0,
-          "refId": "G",
-          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.txf.16.value), 4, 5)"
-        },
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "hide": false,
-          "refCount": 0,
-          "refId": "F",
-          "target": "aliasByNode(perSecond(icinga.nwt0318m66.Interfaces.perfdata.txf.17.value), 4, 5)"
-        }
-      ],
-      "title": "TX packet rate, Service WRS (nwt0318m66)",
-      "type": "timeseries"
     }
   ],
-  "refresh": "1m",
+  "refresh": "5m",
   "schemaVersion": 39,
   "tags": [],
   "templating": {
@@ -1292,13 +1139,13 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "GMT WRS (Icinga)",
   "uid": "Tzjg9n9Vz",
-  "version": 39,
+  "version": 61,
   "weekStart": ""
 }
