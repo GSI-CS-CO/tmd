@@ -553,6 +553,7 @@
               "mode": "line"
             }
           },
+          "decimals": 6,
           "links": [],
           "mappings": [],
           "thresholds": {
@@ -782,6 +783,6 @@
   "timezone": "",
   "title": "GMT Diagnostic (PRO, INT, DEV, UNI)",
   "uid": "4YBcNb1Wz",
-  "version": 8,
+  "version": 9,
   "weekStart": ""
 }
