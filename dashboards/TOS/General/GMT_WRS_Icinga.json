@@ -365,7 +365,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "dark-red",
@@ -460,7 +461,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -541,7 +543,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "All",
           "value": "$__all"
         },
@@ -819,9 +821,14 @@
             "selected": false,
             "text": "nwt0475m66",
             "value": "nwt0475m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0485m66",
+            "value": "nwt0485m66"
           }
         ],
-        "query": "nwt0013m66, nwt0014m66, nwt0021m66, nwt0022m66, nwt0024m66, nwt0026m66, nwt0028m66, nwt0032m66, nwt0038m66, nwt0039m66, nwt0041m66, nwt0047m66, nwt0048m66, nwt0076m66, nwt0081m66, nwt0078m66, nwt0079m66, nwt0077m66, nwt0082m66, nwt0084m66, nwt0085m66, nwt0086m66, nwt0087m66, nwt0088m66, nwt0089m66, nwt0090m66, nwt0091m66, nwt0092m66, nwt0093m66, nwt0094m66, nwt0095m66, nwt0096m66, nwt0097m66, nwt0098m66, nwt0099m66, nwt0110m66, nwt0113m66, nwt0117m66, nwt0122m66, nwt0226m66, nwt0272m66, nwt0273m66, nwt0275m66, nwt0277m66, nwt0284m66, nwt0287m66, nwt0300m66, nwt0318m66, \nnwt0323m66, nwt0324m66, nwt0468m66, nwt0474m66, \nnwt0475m66",
+        "query": "nwt0013m66, nwt0014m66, nwt0021m66, nwt0022m66, nwt0024m66, nwt0026m66, nwt0028m66, nwt0032m66, nwt0038m66, nwt0039m66, nwt0041m66, nwt0047m66, nwt0048m66, nwt0076m66, nwt0081m66, nwt0078m66, nwt0079m66, nwt0077m66, nwt0082m66, nwt0084m66, nwt0085m66, nwt0086m66, nwt0087m66, nwt0088m66, nwt0089m66, nwt0090m66, nwt0091m66, nwt0092m66, nwt0093m66, nwt0094m66, nwt0095m66, nwt0096m66, nwt0097m66, nwt0098m66, nwt0099m66, nwt0110m66, nwt0113m66, nwt0117m66, nwt0122m66, nwt0226m66, nwt0272m66, nwt0273m66, nwt0275m66, nwt0277m66, nwt0284m66, nwt0287m66, nwt0300m66, nwt0318m66, \nnwt0323m66, nwt0324m66, nwt0468m66, nwt0474m66, \nnwt0475m66, nwt0485m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -1062,7 +1069,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "ntw0009m66",
           "value": "ntw0009m66"
         },
@@ -1133,6 +1140,7 @@
           }
         ],
         "query": "ntw0009m66, ntw0010m66, ntw0011m66, ntw0016m66, ntw0018m66, ntw0025m66, ntw0049m66, ntw0050m66, ntw0296m66, ntw0297m66, ntw0469m66",
+        "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
       }
@@ -1146,6 +1154,6 @@
   "timezone": "",
   "title": "GMT WRS (Icinga)",
   "uid": "Tzjg9n9Vz",
-  "version": 61,
+  "version": 62,
   "weekStart": ""
 }
