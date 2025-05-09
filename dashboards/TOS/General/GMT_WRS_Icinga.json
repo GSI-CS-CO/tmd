@@ -34,6 +34,71 @@
         "type": "graphite",
         "uid": "266gReNVk"
       },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 60
+              },
+              {
+                "color": "dark-purple",
+                "value": 70
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.2.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "aliasByNode(sortByMaxima(icinga.*.Temperature.perfdata.sensor.fpga.value), 1)"
+        }
+      ],
+      "title": "WRS FPGA Temperature [Thresholds >= 60° Red, >= 70° Purple]",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
       "description": "Top 10 WRSs that have the highest FPGA temperature value",
       "fieldConfig": {
         "defaults": {
@@ -94,7 +159,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 0
+        "y": 12
       },
       "id": 6,
       "options": {
@@ -190,7 +255,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 21
       },
       "id": 7,
       "options": {
@@ -286,7 +351,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 30
       },
       "id": 2,
       "options": {
@@ -382,7 +447,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 39
       },
       "id": 5,
       "options": {
@@ -478,7 +543,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 48
       },
       "id": 8,
       "options": {
@@ -543,7 +608,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
@@ -1069,7 +1134,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "ntw0009m66",
           "value": "ntw0009m66"
         },
@@ -1154,6 +1219,6 @@
   "timezone": "",
   "title": "GMT WRS (Icinga)",
   "uid": "Tzjg9n9Vz",
-  "version": 62,
+  "version": 63,
   "weekStart": ""
 }
