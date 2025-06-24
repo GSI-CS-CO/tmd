@@ -902,9 +902,14 @@
             "selected": false,
             "text": "nwt0302m66",
             "value": "nwt0302m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0303m66",
+            "value": "nwt0303m66"
           }
         ],
-        "query": "nwt0036m66, nwt0083m66, nwt0100m66, nwt0108m66, nwt0285m66, nwt0291m66, nwt0292m66, nwt0293m66, nwt0294m66, nwt0302m66",
+        "query": "nwt0036m66, nwt0083m66, nwt0100m66, nwt0108m66, nwt0285m66, nwt0291m66, nwt0292m66, nwt0293m66, nwt0294m66, nwt0302m66,\nnwt0303m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -1073,9 +1078,9 @@
       },
       {
         "current": {
-          "selected": true,
-          "text": "All",
-          "value": "$__all"
+          "selected": false,
+          "text": "ntw0009m66",
+          "value": "ntw0009m66"
         },
         "hide": 0,
         "includeAll": true,
@@ -1083,12 +1088,12 @@
         "name": "ttf_wrs",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "All",
             "value": "$__all"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "ntw0009m66",
             "value": "ntw0009m66"
           },
@@ -1158,6 +1163,6 @@
   "timezone": "",
   "title": "GMT WRS (Icinga)",
   "uid": "Tzjg9n9Vz",
-  "version": 65,
+  "version": 66,
   "weekStart": ""
 }
