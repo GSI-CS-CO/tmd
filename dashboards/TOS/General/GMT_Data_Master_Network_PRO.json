@@ -311,30 +311,252 @@
       }
     },
     {
-      "collapsed": false,
       "datasource": {
         "type": "graphite",
         "uid": "266gReNVk"
       },
+      "description": "# warnings of data master\n(cpu0=SIS+HEST, cpu1=CRYRING, cpu2=ESR)",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "warnings",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "hertz"
+        },
+        "overrides": []
+      },
       "gridPos": {
-        "h": 1,
-        "w": 24,
+        "h": 9,
+        "w": 18,
         "x": 0,
         "y": 10
       },
-      "id": 4,
-      "panels": [],
+      "id": 23,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "last"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
       "targets": [
         {
           "datasource": {
             "type": "graphite",
             "uid": "266gReNVk"
           },
-          "refId": "A"
+          "hide": true,
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(sortByMaxima(dm.$dm.cpu*.warnings), 1, 2)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(dm.$dm.cpu0.warnings, 'SIS18', false)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(dm.$dm.cpu1.warnings, 'Cryring', false)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "D",
+          "target": "alias(dm.$dm.cpu2.warnings, 'ESR', false)"
         }
       ],
-      "title": "Network Packets",
-      "type": "row"
+      "title": "Warnings - $dm",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "Warning rate of data master\n(cpu0=SIS+HEST, cpu1=CRYRING, cpu2=ESR)",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "warning rate",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "hertz"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 18,
+        "y": 10
+      },
+      "id": 22,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "last"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": true,
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(sortByMaxima(dm.$dm.cpu*.rate10s), 1, 2)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(dm.$dm.cpu0.wrate1m, 'SIS18', false)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(dm.$dm.cpu1.wrate1m, 'Cryring', false)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "D",
+          "target": "alias(dm.$dm.cpu2.wrate1m, 'ESR', false)"
+        }
+      ],
+      "title": "Warning rates - $dm",
+      "type": "timeseries"
     },
     {
       "datasource": {
@@ -397,7 +619,7 @@
         "h": 9,
         "w": 18,
         "x": 0,
-        "y": 11
+        "y": 19
       },
       "id": 2,
       "links": [],
@@ -544,7 +766,7 @@
         "h": 9,
         "w": 6,
         "x": 18,
-        "y": 11
+        "y": 19
       },
       "id": 19,
       "links": [],
@@ -639,7 +861,33 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 28
+      },
+      "id": 4,
+      "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "Network Packets",
+      "type": "row"
+    },
+    {
+      "collapsed": false,
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 29
       },
       "id": 13,
       "panels": [],
@@ -751,7 +999,7 @@
         "h": 9,
         "w": 18,
         "x": 0,
-        "y": 21
+        "y": 30
       },
       "id": 18,
       "links": [],
@@ -845,7 +1093,7 @@
         "h": 9,
         "w": 6,
         "x": 18,
-        "y": 21
+        "y": 30
       },
       "id": 9,
       "links": [],
@@ -938,7 +1186,7 @@
         "h": 9,
         "w": 18,
         "x": 0,
-        "y": 30
+        "y": 39
       },
       "id": 17,
       "links": [],
@@ -1032,7 +1280,7 @@
         "h": 9,
         "w": 6,
         "x": 18,
-        "y": 30
+        "y": 39
       },
       "id": 16,
       "links": [],
@@ -1124,7 +1372,7 @@
         "h": 9,
         "w": 18,
         "x": 0,
-        "y": 39
+        "y": 48
       },
       "id": 20,
       "options": {
@@ -1275,7 +1523,7 @@
         "h": 9,
         "w": 6,
         "x": 18,
-        "y": 39
+        "y": 48
       },
       "id": 21,
       "options": {
@@ -1483,8 +1731,8 @@
     ]
   },
   "timezone": "",
-  "title": "GMT Data Master & Network (PRO)",
+  "title": "GMT Production",
   "uid": "vtuC9m1Zk",
-  "version": 22,
+  "version": 27,
   "weekStart": ""
 }
