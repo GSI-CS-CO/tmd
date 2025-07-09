@@ -89,7 +89,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
+                "color": "transparent",
                 "value": null
               }
             ]
@@ -136,41 +136,6 @@
       "type": "timeseries"
     },
     {
-      "alert": {
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [
-                30
-              ],
-              "type": "lt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": [
-                "A",
-                "5m",
-                "now"
-              ]
-            },
-            "reducer": {
-              "params": [],
-              "type": "last"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "keep_state",
-        "for": "1m",
-        "frequency": "1m",
-        "handler": 1,
-        "message": "WR sync alert from data master",
-        "name": "WR sync alert - data master",
-        "noDataState": "keep_state",
-        "notifications": []
-      },
       "datasource": {
         "type": "graphite",
         "uid": "266gReNVk"
@@ -187,47 +152,31 @@
             "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
+            "fillOpacity": 80,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
               "tooltip": false,
               "viz": false
             },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
             "lineWidth": 1,
-            "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "never",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
             "thresholdsStyle": {
-              "mode": "area"
+              "mode": "off"
             }
           },
           "mappings": [
             {
               "options": {
-                "0": {
-                  "color": "dark-red",
-                  "index": 2,
-                  "text": "Undefined"
-                },
                 "20": {
-                  "color": "dark-yellow",
+                  "color": "red",
                   "index": 0,
                   "text": "No sync"
                 },
                 "100": {
-                  "color": "dark-green",
+                  "color": "green",
                   "index": 1,
                   "text": "Tracking"
                 }
@@ -235,20 +184,14 @@
               "type": "value"
             }
           ],
+          "max": 100,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "dark-red",
+                "color": "transparent",
                 "value": null
-              },
-              {
-                "color": "dark-yellow",
-                "value": 20
-              },
-              {
-                "color": "dark-green",
-                "value": 100
               }
             ]
           },
@@ -265,6 +208,10 @@
       "id": 33,
       "links": [],
       "options": {
+        "barRadius": 0,
+        "barWidth": 0.5,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
         "legend": {
           "calcs": [
             "last"
@@ -273,10 +220,15 @@
           "placement": "bottom",
           "showLegend": true
         },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
         "tooltip": {
           "mode": "multi",
           "sort": "none"
-        }
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 100
       },
       "pluginVersion": "10.2.6",
       "targets": [
@@ -286,11 +238,11 @@
             "uid": "266gReNVk"
           },
           "refId": "A",
-          "target": "aliasByNode(dm.$dm.wr.status, 3)"
+          "target": "alias(dm.$dm.wr.status, 'wrsync', false)"
         }
       ],
       "title": "WR sync status - $dm",
-      "type": "timeseries"
+      "type": "barchart"
     },
     {
       "datasource": {
@@ -440,7 +392,8 @@
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
-              "type": "linear"
+              "log": 2,
+              "type": "log"
             },
             "showPoints": "never",
             "spanNulls": false,
@@ -510,10 +463,235 @@
           "refCount": 0,
           "refId": "B",
           "target": "alias(dm.WRF50.mode, 'mode', false)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(dm.WRF50.dmu.lrate, 'lock rate 1h', false)"
         }
       ],
-      "title": "50 Hz Info (mode, lock state)",
+      "title": "50 Hz Info (mode, lock state, lock rate)",
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "Cycle rate of Pulsezentrale\n(cpu0=QR QL QN HLI HSI AT TK)",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "cycle rate",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "hertz"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 18,
+        "x": 0,
+        "y": 19
+      },
+      "id": 20,
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "last"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(uni.pz.$pz.mainsf, 2)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(dm.WRF50.dmu.rate, '$dm', false)"
+        }
+      ],
+      "title": "Cycles (2us diff in cycle length = 5mHz diff in cycle rate) - $pz",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "WR sync status\n(100=Tracking, 20=No sync, 0=other)",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [
+            {
+              "options": {
+                "20": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "No sync"
+                },
+                "100": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "Tracking"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "transparent",
+                "value": null
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 18,
+        "y": 19
+      },
+      "id": 11,
+      "links": [],
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.5,
+        "fullHighlight": false,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [
+            "last"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "normal",
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        },
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 100
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "aliasByNode(uni.pz.*.wrsync, 3)"
+        }
+      ],
+      "title": "PZ WR sync - $pz",
+      "type": "barchart"
     },
     {
       "collapsed": false,
@@ -525,7 +703,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 28
       },
       "id": 7,
       "panels": [],
@@ -603,7 +781,7 @@
         "h": 9,
         "w": 18,
         "x": 0,
-        "y": 20
+        "y": 29
       },
       "id": 8,
       "links": [],
@@ -633,269 +811,6 @@
         }
       ],
       "title": "TX message rate - $pz",
-      "type": "timeseries"
-    },
-    {
-      "alert": {
-        "alertRuleTags": {},
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [
-                30
-              ],
-              "type": "lt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": [
-                "A",
-                "5m",
-                "now"
-              ]
-            },
-            "reducer": {
-              "params": [],
-              "type": "last"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "keep_state",
-        "for": "1m",
-        "frequency": "1m",
-        "handler": 1,
-        "message": "WR sync alert from UNILAC Pulsezentrale",
-        "name": "WR sync alert - Pulsezentrale",
-        "noDataState": "keep_state",
-        "notifications": []
-      },
-      "datasource": {
-        "type": "graphite",
-        "uid": "266gReNVk"
-      },
-      "description": "WR sync status\n(100=Tracking, 20=No sync, 0=other)",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "area"
-            }
-          },
-          "links": [],
-          "mappings": [
-            {
-              "options": {
-                "0": {
-                  "color": "dark-red",
-                  "index": 2,
-                  "text": "Undefined"
-                },
-                "20": {
-                  "color": "dark-yellow",
-                  "index": 1,
-                  "text": "No sync"
-                },
-                "100": {
-                  "color": "dark-green",
-                  "index": 0,
-                  "text": "Tracking"
-                }
-              },
-              "type": "value"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "dark-red",
-                "value": null
-              },
-              {
-                "color": "dark-yellow",
-                "value": 20
-              },
-              {
-                "color": "dark-green",
-                "value": 100
-              }
-            ]
-          },
-          "unit": "none"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 6,
-        "x": 18,
-        "y": 20
-      },
-      "id": 11,
-      "links": [],
-      "options": {
-        "legend": {
-          "calcs": [
-            "last"
-          ],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "9.2.10",
-      "targets": [
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "refId": "A",
-          "target": "aliasByNode(uni.pz.*.wrsync, 3)"
-        }
-      ],
-      "title": "PZ WR sync - $pz",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "graphite",
-        "uid": "266gReNVk"
-      },
-      "description": "Cycle rate of Pulsezentrale\n(cpu0=QR QL QN HLI HSI AT TK)",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "cycle rate",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "hertz"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 9,
-        "w": 18,
-        "x": 0,
-        "y": 29
-      },
-      "id": 20,
-      "links": [],
-      "options": {
-        "legend": {
-          "calcs": [
-            "last"
-          ],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "9.2.10",
-      "targets": [
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode(uni.pz.$pz.mainsf, 2)"
-        },
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "hide": false,
-          "refCount": 0,
-          "refId": "B",
-          "target": "alias(dm.WRF50.dmu.rate, '$dm', false)"
-        }
-      ],
-      "title": "Cycles (2us diff in cycle length = 5mHz diff in cycle rate) - $pz",
       "type": "timeseries"
     },
     {
@@ -1859,8 +1774,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -1954,8 +1868,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               }
             ]
           },
@@ -2177,6 +2090,6 @@
   "timezone": "",
   "title": "GMT UNILAC",
   "uid": "Y58FISbWk",
-  "version": 41,
+  "version": 47,
   "weekStart": ""
 }
