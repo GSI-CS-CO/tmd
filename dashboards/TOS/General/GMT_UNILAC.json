@@ -189,7 +189,7 @@
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
-            "fillOpacity": 10,
+            "fillOpacity": 0,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -210,24 +210,49 @@
               "mode": "none"
             },
             "thresholdsStyle": {
-              "mode": "dashed"
+              "mode": "area"
             }
           },
-          "mappings": [],
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 2,
+                  "text": "Undefined"
+                },
+                "20": {
+                  "color": "dark-yellow",
+                  "index": 0,
+                  "text": "No sync"
+                },
+                "100": {
+                  "color": "dark-green",
+                  "index": 1,
+                  "text": "Tracking"
+                }
+              },
+              "type": "value"
+            }
+          ],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "transparent",
+                "color": "dark-red",
                 "value": null
               },
               {
-                "color": "dark-red",
+                "color": "dark-yellow",
                 "value": 20
+              },
+              {
+                "color": "dark-green",
+                "value": 100
               }
             ]
           },
-          "unit": "percent"
+          "unit": "none"
         },
         "overrides": []
       },
@@ -242,7 +267,7 @@
       "options": {
         "legend": {
           "calcs": [
-            "lastNotNull"
+            "last"
           ],
           "displayMode": "list",
           "placement": "bottom",
@@ -261,10 +286,10 @@
             "uid": "266gReNVk"
           },
           "refId": "A",
-          "target": "aliasByNode(dm.$dm.wr.status, 1)"
+          "target": "aliasByNode(dm.$dm.wr.status, 3)"
         }
       ],
-      "title": "WR sync status",
+      "title": "WR sync status - $dm",
       "type": "timeseries"
     },
     {
@@ -356,7 +381,8 @@
           },
           "refCount": 0,
           "refId": "B",
-          "target": "alias(dm.WRF50.mains.period, 'mains', false)"
+          "target": "alias(dm.WRF50.mains.period, 'mains', false)",
+          "textEditor": false
         },
         {
           "datasource": {
@@ -366,7 +392,18 @@
           "hide": false,
           "refCount": 0,
           "refId": "A",
-          "target": "alias(dm.WRF50.dmu.period, '$dm', false)"
+          "target": "alias(dm.WRF50.dmu.period, '$dm', false)",
+          "textEditor": false
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "C",
+          "target": "alias(dm.WRF50.pz.mains.period, 'scuxl0183', false)"
         }
       ],
       "title": "50 Hz Info (synchronization period)",
@@ -387,6 +424,7 @@
             "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
+            "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -462,6 +500,16 @@
           "refCount": 0,
           "refId": "A",
           "target": "alias(dm.WRF50.dmu.state, 'lock', false)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(dm.WRF50.mode, 'mode', false)"
         }
       ],
       "title": "50 Hz Info (mode, lock state)",
@@ -628,7 +676,7 @@
         "type": "graphite",
         "uid": "266gReNVk"
       },
-      "description": "WR sync status\n(100%=Tracking, 20%=No sync, 0=other)",
+      "description": "WR sync status\n(100=Tracking, 20=No sync, 0=other)",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -638,11 +686,10 @@
             "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "100%=Tracking, 20%=No sync, 0=other",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
-            "fillOpacity": 10,
+            "fillOpacity": 0,
             "gradientMode": "none",
             "hideFrom": {
               "legend": false,
@@ -663,25 +710,50 @@
               "mode": "none"
             },
             "thresholdsStyle": {
-              "mode": "dashed"
+              "mode": "area"
             }
           },
           "links": [],
-          "mappings": [],
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 2,
+                  "text": "Undefined"
+                },
+                "20": {
+                  "color": "dark-yellow",
+                  "index": 1,
+                  "text": "No sync"
+                },
+                "100": {
+                  "color": "dark-green",
+                  "index": 0,
+                  "text": "Tracking"
+                }
+              },
+              "type": "value"
+            }
+          ],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
+                "color": "dark-red",
                 "value": null
               },
               {
-                "color": "transparent",
+                "color": "dark-yellow",
                 "value": 20
+              },
+              {
+                "color": "dark-green",
+                "value": 100
               }
             ]
           },
-          "unit": "percent"
+          "unit": "none"
         },
         "overrides": []
       },
@@ -715,7 +787,7 @@
             "uid": "266gReNVk"
           },
           "refId": "A",
-          "target": "aliasByNode(uni.pz.*.wrsync, 2)"
+          "target": "aliasByNode(uni.pz.*.wrsync, 3)"
         }
       ],
       "title": "PZ WR sync - $pz",
@@ -808,8 +880,19 @@
             "type": "graphite",
             "uid": "266gReNVk"
           },
+          "refCount": 0,
           "refId": "A",
           "target": "aliasByNode(uni.pz.$pz.mainsf, 2)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": false,
+          "refCount": 0,
+          "refId": "B",
+          "target": "alias(dm.WRF50.dmu.rate, '$dm', false)"
         }
       ],
       "title": "Cycles (2us diff in cycle length = 5mHz diff in cycle rate) - $pz",
@@ -2094,6 +2177,6 @@
   "timezone": "",
   "title": "GMT UNILAC",
   "uid": "Y58FISbWk",
-  "version": 24,
+  "version": 41,
   "weekStart": ""
 }
