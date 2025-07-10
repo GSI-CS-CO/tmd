@@ -661,7 +661,6 @@
             "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "100%=Tracking, 20%=No sync, 0=others",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -686,24 +685,36 @@
               "mode": "none"
             },
             "thresholdsStyle": {
-              "mode": "line"
+              "mode": "area"
             }
           },
-          "mappings": [],
+          "mappings": [
+            {
+              "options": {
+                "20": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "No sync"
+                },
+                "100": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "Tracking"
+                }
+              },
+              "type": "value"
+            }
+          ],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "dark-green",
+                "color": "transparent",
                 "value": null
-              },
-              {
-                "color": "dark-red",
-                "value": 20
               }
             ]
           },
-          "unit": "percent"
+          "unit": "none"
         },
         "overrides": []
       },
@@ -877,6 +888,6 @@
   "timezone": "",
   "title": "GMT Diagnostic (PRO, INT, DEV, UNI)",
   "uid": "4YBcNb1Wz",
-  "version": 11,
+  "version": 12,
   "weekStart": ""
 }

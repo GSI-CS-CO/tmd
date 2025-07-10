@@ -349,7 +349,7 @@
         "type": "graphite",
         "uid": "266gReNVk"
       },
-      "description": "WR sync status (100%=Tracking, 20%=No sync, 0=others)",
+      "description": "WR sync status (100=Tracking, 20=No sync, 0=others)",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -359,7 +359,6 @@
             "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "100%=Tracking, 20%=No sync, 0=others",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -384,20 +383,36 @@
               "mode": "none"
             },
             "thresholdsStyle": {
-              "mode": "off"
+              "mode": "area"
             }
           },
-          "mappings": [],
+          "mappings": [
+            {
+              "options": {
+                "20": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "No sync"
+                },
+                "100": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "Tracking"
+                }
+              },
+              "type": "value"
+            }
+          ],
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
+                "color": "transparent",
                 "value": null
               }
             ]
           },
-          "unit": "percent"
+          "unit": "none"
         },
         "overrides": []
       },
@@ -432,7 +447,7 @@
           },
           "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(gw.*.*.status, 1)"
+          "target": "aliasByNode(gw.*.*.status, 1, 2)"
         }
       ],
       "title": "Gateway WR sync",
@@ -1201,7 +1216,7 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "All",
           "value": "$__all"
         },
@@ -1285,6 +1300,6 @@
   "timezone": "",
   "title": "GMT Gateways & Snooper (PRO)",
   "uid": "FYTGfkAWz",
-  "version": 11,
+  "version": 12,
   "weekStart": ""
 }
