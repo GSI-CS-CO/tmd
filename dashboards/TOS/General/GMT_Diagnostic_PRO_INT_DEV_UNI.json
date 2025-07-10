@@ -661,6 +661,7 @@
             "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
+            "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -705,6 +706,8 @@
               "type": "value"
             }
           ],
+          "max": 100,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -888,6 +891,6 @@
   "timezone": "",
   "title": "GMT Diagnostic (PRO, INT, DEV, UNI)",
   "uid": "4YBcNb1Wz",
-  "version": 12,
+  "version": 13,
   "weekStart": ""
 }

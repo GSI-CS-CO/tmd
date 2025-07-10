@@ -273,6 +273,8 @@
               "type": "value"
             }
           ],
+          "max": 100,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1723,6 +1725,6 @@
   "timezone": "",
   "title": "GMT Production",
   "uid": "vtuC9m1Zk",
-  "version": 30,
+  "version": 31,
   "weekStart": ""
 }

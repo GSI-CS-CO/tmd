@@ -359,6 +359,7 @@
             "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
+            "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -403,6 +404,8 @@
               "type": "value"
             }
           ],
+          "max": 100,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -1216,7 +1219,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "All",
           "value": "$__all"
         },
@@ -1300,6 +1303,6 @@
   "timezone": "",
   "title": "GMT Gateways & Snooper (PRO)",
   "uid": "FYTGfkAWz",
-  "version": 12,
+  "version": 13,
   "weekStart": ""
 }
