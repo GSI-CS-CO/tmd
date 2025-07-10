@@ -297,7 +297,7 @@
       "options": {
         "legend": {
           "calcs": [
-            "lastNotNull"
+            "last"
           ],
           "displayMode": "list",
           "placement": "bottom",
@@ -875,32 +875,6 @@
         "x": 0,
         "y": 28
       },
-      "id": 4,
-      "panels": [],
-      "targets": [
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "refId": "A"
-        }
-      ],
-      "title": "Network Packets",
-      "type": "row"
-    },
-    {
-      "collapsed": false,
-      "datasource": {
-        "type": "graphite",
-        "uid": "266gReNVk"
-      },
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 29
-      },
       "id": 13,
       "panels": [],
       "targets": [
@@ -1011,7 +985,7 @@
         "h": 9,
         "w": 18,
         "x": 0,
-        "y": 30
+        "y": 29
       },
       "id": 18,
       "links": [],
@@ -1105,7 +1079,7 @@
         "h": 9,
         "w": 6,
         "x": 18,
-        "y": 30
+        "y": 29
       },
       "id": 9,
       "links": [],
@@ -1199,7 +1173,7 @@
         "h": 9,
         "w": 18,
         "x": 0,
-        "y": 39
+        "y": 38
       },
       "id": 17,
       "links": [],
@@ -1294,7 +1268,7 @@
         "h": 9,
         "w": 6,
         "x": 18,
-        "y": 39
+        "y": 38
       },
       "id": 16,
       "links": [],
@@ -1375,7 +1349,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -1386,7 +1361,7 @@
         "h": 9,
         "w": 18,
         "x": 0,
-        "y": 48
+        "y": 47
       },
       "id": 20,
       "options": {
@@ -1526,7 +1501,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           }
@@ -1537,7 +1513,7 @@
         "h": 9,
         "w": 6,
         "x": 18,
-        "y": 48
+        "y": 47
       },
       "id": 21,
       "options": {
@@ -1747,6 +1723,6 @@
   "timezone": "",
   "title": "GMT Production",
   "uid": "vtuC9m1Zk",
-  "version": 28,
+  "version": 30,
   "weekStart": ""
 }
