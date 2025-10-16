@@ -130,7 +130,7 @@
         "type": "graphite",
         "uid": "266gReNVk"
       },
-      "description": "Top 5 WRSs that have the highest FPGA temperature value",
+      "description": "Top 10 WRSs that have the highest FPGA temperature value",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -215,7 +215,8 @@
             "uid": "266gReNVk"
           },
           "refId": "A",
-          "target": "highestMax(aliasByNode(icinga.$unilac_wrs.Temperature.perfdata.sensor.fpga.value, 1), 5)"
+          "target": "highestMax(aliasByNode(icinga.$unilac_wrs.Temperature.perfdata.sensor.fpga.value, 1), 10)",
+          "textEditor": true
         }
       ],
       "title": "WRS FPGA temperature (UNILAC)",
@@ -830,9 +831,14 @@
             "selected": false,
             "text": "nwt0485m66",
             "value": "nwt0485m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0489m66",
+            "value": "nwt0489m66"
           }
         ],
-        "query": "nwt0013m66, nwt0014m66, nwt0021m66, nwt0022m66, nwt0024m66, nwt0026m66, nwt0028m66, nwt0032m66, nwt0038m66, nwt0039m66, nwt0041m66, nwt0047m66, nwt0048m66, nwt0076m66, nwt0081m66, nwt0078m66, nwt0079m66, nwt0077m66, nwt0082m66, nwt0084m66, nwt0085m66, nwt0086m66, nwt0087m66, nwt0088m66, nwt0089m66, nwt0090m66, nwt0091m66, nwt0092m66, nwt0093m66, nwt0094m66, nwt0095m66, nwt0096m66, nwt0097m66, nwt0098m66, nwt0099m66, nwt0110m66, nwt0113m66, nwt0117m66, nwt0122m66, nwt0226m66, nwt0272m66, nwt0273m66, nwt0275m66, nwt0277m66, nwt0284m66, nwt0287m66, nwt0300m66, nwt0318m66, \nnwt0323m66, nwt0324m66, nwt0468m66, nwt0474m66, \nnwt0475m66, nwt0477m66, nwt0485m66",
+        "query": "nwt0013m66, nwt0014m66, nwt0021m66, nwt0022m66, nwt0024m66, nwt0026m66, nwt0028m66, nwt0032m66, nwt0038m66, nwt0039m66, nwt0041m66, nwt0047m66, nwt0048m66, nwt0076m66, nwt0081m66, nwt0078m66, nwt0079m66, nwt0077m66, nwt0082m66, nwt0084m66, nwt0085m66, nwt0086m66, nwt0087m66, nwt0088m66, nwt0089m66, nwt0090m66, nwt0091m66, nwt0092m66, nwt0093m66, nwt0094m66, nwt0095m66, nwt0096m66, nwt0097m66, nwt0098m66, nwt0099m66, nwt0110m66, nwt0113m66, nwt0117m66, nwt0122m66, nwt0226m66, nwt0272m66, nwt0273m66, nwt0275m66, nwt0277m66, nwt0284m66, nwt0287m66, nwt0300m66, nwt0318m66, \nnwt0323m66, nwt0324m66, nwt0468m66, nwt0474m66, \nnwt0475m66, nwt0477m66, nwt0485m66, nwt0489m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -900,21 +906,51 @@
           },
           {
             "selected": false,
-            "text": "nwt0302m66",
-            "value": "nwt0302m66"
-          },
-          {
-            "selected": false,
             "text": "nwt0303m66",
             "value": "nwt0303m66"
           },
           {
             "selected": false,
+            "text": "nwt0317m66",
+            "value": "nwt0317m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0466m66",
+            "value": "nwt0466m66"
+          },
+          {
+            "selected": false,
             "text": "nwt0478m66",
             "value": "nwt0478m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0480m66",
+            "value": "nwt0480m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0481m66",
+            "value": "nwt0481m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0483m66",
+            "value": "nwt0483m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0484m66",
+            "value": "nwt0484m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0488m66",
+            "value": "nwt0488m66"
           }
         ],
-        "query": "nwt0036m66, nwt0083m66, nwt0100m66, nwt0108m66, nwt0285m66, nwt0291m66, nwt0292m66, nwt0293m66, nwt0294m66, nwt0302m66,\nnwt0303m66, nwt0478m66",
+        "query": "nwt0036m66, nwt0083m66, nwt0100m66, nwt0108m66, nwt0285m66, nwt0291m66, nwt0292m66, nwt0293m66, nwt0294m66, nwt0303m66, nwt0317m66, nwt0466m66, nwt0478m66, nwt0480m66, nwt0481m66, nwt0483m66, nwt0484m66, nwt0488m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -967,11 +1003,11 @@
           },
           {
             "selected": false,
-            "text": "nwt02843m66",
-            "value": "nwt02843m66"
+            "text": "nwt0284m66",
+            "value": "nwt0284m66"
           }
         ],
-        "query": "nwt0013m66, nwt0029m66, nwt0037m66, nwt0082m66, nwt0083m66, nwt0283m66, nwt02843m66",
+        "query": "nwt0013m66, nwt0029m66, nwt0037m66, nwt0082m66, nwt0083m66, nwt0283m66, nwt0284m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -1168,6 +1204,6 @@
   "timezone": "",
   "title": "GMT WRS (Icinga)",
   "uid": "Tzjg9n9Vz",
-  "version": 67,
+  "version": 72,
   "weekStart": ""
 }
