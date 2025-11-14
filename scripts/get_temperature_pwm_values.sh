@@ -4,7 +4,7 @@
 # send them to a Grafana server (using host and port) in given interval (interval).
 
 # SNMP
-snmp_opts="-c public -v 2c -O q -m ALL -M +$HOME/mibs"  # -O q: quick print with easier parsing
+snmp_opts="-c public -v 2c -O q -m ALL -M +$HOME"  # -O q: quick print with easier parsing
 snmp_oid="wrsTemperatureGroup"
 
 # carbon server: host=localhost, port=2003
@@ -27,12 +27,14 @@ do
         timestamp=$(date +%s)
         #echo "$snmp_opts $switch.timing $snmp_oid"
         snmp_response="$(snmpwalk $snmp_opts $switch.timing $snmp_oid)"
-        #echo "$snmp_response"
+        #echo "$snmp_response" # WR-SWITCH-MIB::wrsTempFanPwmVal.0 40
 
         for m in ${metrics[@]}; do
+            # parse a metric in 'snmp_response'
             while IFS= read -r line
             do
-                value=${line#*${m}.0[[:space:]]} # get a value by trimming the leading part (WR-SWITCH-MIB::wrsTempFanPwmVal.0 )
+                # get a value by trimming the leading part (WR-SWITCH-MIB::wrsTempFanPwmVal.0 )
+                value=${line#*${m}.0[[:space:]]}
 
                 if [ "${value:0:2}" != "WR" ]; then
                     break                        # break if metric's value is obtained
