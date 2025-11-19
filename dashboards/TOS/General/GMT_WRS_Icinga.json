@@ -462,7 +462,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -629,8 +630,8 @@
           },
           {
             "selected": false,
-            "text": "nwt0081m66",
-            "value": "nwt0081m66"
+            "text": "nwt0077m66",
+            "value": "nwt0077m66"
           },
           {
             "selected": false,
@@ -644,8 +645,8 @@
           },
           {
             "selected": false,
-            "text": "nwt0077m66",
-            "value": "nwt0077m66"
+            "text": "nwt0081m66",
+            "value": "nwt0081m66"
           },
           {
             "selected": false,
@@ -804,6 +805,11 @@
           },
           {
             "selected": false,
+            "text": "nwt0316m66",
+            "value": "nwt0316m66"
+          },
+          {
+            "selected": false,
             "text": "nwt0318m66",
             "value": "nwt0318m66"
           },
@@ -816,11 +822,6 @@
             "selected": false,
             "text": "nwt0324m66",
             "value": "nwt0324m66"
-          },
-          {
-            "selected": false,
-            "text": "nwt0468m66",
-            "value": "nwt0468m66"
           },
           {
             "selected": false,
@@ -839,6 +840,16 @@
           },
           {
             "selected": false,
+            "text": "nwt0479m66",
+            "value": "nwt0479m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0482m66",
+            "value": "nwt0482m66"
+          },
+          {
+            "selected": false,
             "text": "nwt0485m66",
             "value": "nwt0485m66"
           },
@@ -848,7 +859,7 @@
             "value": "nwt0489m66"
           }
         ],
-        "query": "nwt0013m66, nwt0014m66, nwt0021m66, nwt0022m66, nwt0024m66, nwt0026m66, nwt0028m66, nwt0032m66, nwt0038m66, nwt0039m66, nwt0041m66, nwt0047m66, nwt0048m66, nwt0076m66, nwt0081m66, nwt0078m66, nwt0079m66, nwt0077m66, nwt0082m66, nwt0084m66, nwt0085m66, nwt0086m66, nwt0087m66, nwt0088m66, nwt0089m66, nwt0090m66, nwt0091m66, nwt0092m66, nwt0093m66, nwt0094m66, nwt0095m66, nwt0096m66, nwt0097m66, nwt0098m66, nwt0099m66, nwt0110m66, nwt0113m66, nwt0117m66, nwt0122m66, nwt0186m66, nwt0226m66, nwt0272m66, nwt0273m66, nwt0275m66, nwt0277m66, nwt0284m66, nwt0287m66, nwt0300m66, nwt0315m66, nwt0318m66, \nnwt0323m66, nwt0324m66, nwt0468m66, nwt0474m66, \nnwt0475m66, nwt0477m66, nwt0485m66, nwt0489m66",
+        "query": "nwt0013m66, nwt0014m66, nwt0021m66, nwt0022m66, nwt0024m66, nwt0026m66, nwt0028m66, nwt0032m66, nwt0038m66, nwt0039m66, nwt0041m66, nwt0047m66, nwt0048m66, nwt0076m66, nwt0077m66, nwt0078m66, nwt0079m66, nwt0081m66, nwt0082m66, nwt0084m66, nwt0085m66, nwt0086m66, nwt0087m66, nwt0088m66, nwt0089m66, nwt0090m66, nwt0091m66, nwt0092m66, nwt0093m66, nwt0094m66, nwt0095m66, nwt0096m66, nwt0097m66, nwt0098m66, nwt0099m66, nwt0110m66, nwt0113m66, nwt0117m66, nwt0122m66, nwt0186m66, nwt0226m66, nwt0272m66, nwt0273m66, nwt0275m66, nwt0277m66, nwt0284m66, nwt0287m66, nwt0300m66, nwt0315m66, nwt0316m66, nwt0318m66, nwt0323m66, nwt0324m66, nwt0474m66, nwt0475m66, nwt0477m66, nwt0479m66, nwt0482m66, nwt0485m66, nwt0489m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -956,11 +967,16 @@
           },
           {
             "selected": false,
+            "text": "nwt0486m66",
+            "value": "nwt0486m66"
+          },
+          {
+            "selected": false,
             "text": "nwt0488m66",
             "value": "nwt0488m66"
           }
         ],
-        "query": "nwt0036m66, nwt0083m66, nwt0100m66, nwt0108m66, nwt0285m66, nwt0291m66, nwt0292m66, nwt0293m66, nwt0294m66, nwt0303m66, nwt0317m66, nwt0466m66, nwt0478m66, nwt0480m66, nwt0481m66, nwt0483m66, nwt0484m66, nwt0488m66",
+        "query": "nwt0036m66, nwt0083m66, nwt0100m66, nwt0108m66, nwt0285m66, nwt0291m66, nwt0292m66, nwt0293m66, nwt0294m66, nwt0303m66, nwt0317m66, nwt0466m66, nwt0478m66, nwt0480m66, nwt0481m66, nwt0483m66, nwt0484m66, nwt0486m66, nwt0488m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -1015,9 +1031,14 @@
             "selected": false,
             "text": "nwt0284m66",
             "value": "nwt0284m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0486m66",
+            "value": "nwt0486m66"
           }
         ],
-        "query": "nwt0013m66, nwt0029m66, nwt0037m66, nwt0082m66, nwt0083m66, nwt0283m66, nwt0284m66",
+        "query": "nwt0013m66, nwt0029m66, nwt0037m66, nwt0082m66, nwt0083m66, nwt0283m66, nwt0284m66, nwt0486m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -1060,6 +1081,11 @@
           },
           {
             "selected": false,
+            "text": "nwt0077m66",
+            "value": "nwt0077m66"
+          },
+          {
+            "selected": false,
             "text": "nwt0078m66",
             "value": "nwt0078m66"
           },
@@ -1070,11 +1096,11 @@
           },
           {
             "selected": false,
-            "text": "nwt0077m66",
-            "value": "nwt0077m66"
+            "text": "nwt0479m66",
+            "value": "nwt0479m66"
           }
         ],
-        "query": "nwt0014m66, nwt0021m66, nwt0024m66, nwt0076m66, nwt0078m66, nwt0079m66, nwt0077m66",
+        "query": "nwt0014m66, nwt0021m66, nwt0024m66, nwt0076m66, nwt0077m66, nwt0078m66, nwt0079m66, nwt0479m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -1120,9 +1146,14 @@
             "selected": false,
             "text": "nwt0474m66",
             "value": "nwt0474m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0488m66",
+            "value": "nwt0488m66"
           }
         ],
-        "query": "nwt0045m66, nwt0100m66, nwt0285m66, nwt0467m66, nwt0474m66",
+        "query": "nwt0045m66, nwt0100m66, nwt0285m66, nwt0467m66, nwt0474m66, nwt0488m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -1214,6 +1245,6 @@
   "timezone": "",
   "title": "GMT WRS (Icinga)",
   "uid": "Tzjg9n9Vz",
-  "version": 73,
+  "version": 74,
   "weekStart": ""
 }
