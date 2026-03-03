@@ -1,0 +1,924 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 19,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "WRS temperatures in racks with similar thermal environment, central TOS racks in BG.2.009",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "max": 65,
+          "min": 45,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(icinga.$BG2A_5N.Temperature.perfdata.sensor.fpga.value, 1)",
+          "textEditor": true
+        }
+      ],
+      "title": "WRS FPGA temperature (BG2A.54..56)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "WRS temperatures in racks with similar thermal environment, central TOS racks in BG.2.002, BG.2.001, BG.1.010b",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "max": 65,
+          "min": 45,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 6,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(icinga.$BG_EPS.Temperature.perfdata.sensor.fpga.value, 1)",
+          "textEditor": true
+        }
+      ],
+      "title": "WRS FPGA temperature (BG2C, BG2B, BG1A)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "WRS temperatures in racks with similar thermal environment; central TOS at LSB6",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "max": 65,
+          "min": 45,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "id": 3,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(icinga.$VR1D_01.Temperature.perfdata.sensor.fpga.value, 1)",
+          "textEditor": true
+        }
+      ],
+      "title": "WRS FPGA temperature (VR1D_01)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "WRS temperatures in racks with similar thermal environment; TOS racks at LSB4",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "max": 65,
+          "min": 45,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 27
+      },
+      "id": 4,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(icinga.$VR1X_40.Temperature.perfdata.sensor.fpga.value, 1)",
+          "textEditor": true
+        }
+      ],
+      "title": "WRS FPGA temperature (VR1X_40)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "WRS temperatures in racks with similar thermal environment; racks in CRYRING containers",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "max": 65,
+          "min": 45,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "dark-red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 36
+      },
+      "id": 5,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(icinga.$TH2_X.Temperature.perfdata.sensor.fpga.value, 1)",
+          "textEditor": false
+        }
+      ],
+      "title": "WRS FPGA temperature (TH2_X)",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "description": "Racks 54..56",
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "BG2A_5N",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0013m66",
+            "value": "nwt0013m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0029m66",
+            "value": "nwt0029m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0037m66",
+            "value": "nwt0037m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0082m66",
+            "value": "nwt0082m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0083m66",
+            "value": "nwt0083m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0099m66",
+            "value": "nwt0099m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0283m66",
+            "value": "nwt0283m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0284m66",
+            "value": "nwt0284m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0465m66",
+            "value": "nwt0465m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0486m66",
+            "value": "nwt0486m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0032m66",
+            "value": "nwt0032m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0098m66",
+            "value": "nwt0098m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0117m66",
+            "value": "nwt0117m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0316m66",
+            "value": "nwt0316m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0014m66",
+            "value": "nwt0014m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0021m66",
+            "value": "nwt0021m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0024m66",
+            "value": "nwt0024m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0076m66",
+            "value": "nwt0076m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0077m66",
+            "value": "nwt0077m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0078m66",
+            "value": "nwt0078m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0079m66",
+            "value": "nwt0079m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0479m66",
+            "value": "nwt0479m66"
+          }
+        ],
+        "query": "nwt0013m66, nwt0029m66, nwt0037m66, nwt0082m66, nwt0083m66, nwt0099m66, nwt0283m66, nwt0284m66, nwt0465m66, nwt0486m66, nwt0032m66, nwt0098m66, nwt0117m66, nwt0316m66, nwt0014m66, nwt0021m66, nwt0024m66, nwt0076m66, nwt0077m66, nwt0078m66, nwt0079m66, nwt0479m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "VR1D_01",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0045m66",
+            "value": "nwt0045m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0100m66",
+            "value": "nwt0100m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0285m66",
+            "value": "nwt0285m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0467m66",
+            "value": "nwt0467m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0474m66",
+            "value": "nwt0474m66"
+          }
+        ],
+        "query": "nwt0045m66, nwt0100m66, nwt0285m66, nwt0467m66, nwt0474m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "description": "WRS in similar thermal environments",
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "VR1X_40",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0478m66",
+            "value": "nwt0478m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0285m66",
+            "value": "nwt0285m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0292m66",
+            "value": "nwt0292m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0293m66",
+            "value": "nwt0293m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0294m66",
+            "value": "nwt0294m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0317m66",
+            "value": "nwt0317m66"
+          }
+        ],
+        "query": "nwt0478m66, nwt0285m66, nwt0292m66, nwt0293m66, nwt0294m66, nwt0317m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "description": "containers at CRYRING",
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "TH2_X",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0022m66",
+            "value": "nwt0022m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0026m66",
+            "value": "nwt0026m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0038m66",
+            "value": "nwt0038m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0041m66",
+            "value": "nwt0041m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0048m66",
+            "value": "nwt0048m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0122m66",
+            "value": "nwt0122m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0081m66",
+            "value": "nwt0081m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0485m66",
+            "value": "nwt0485m66"
+          }
+        ],
+        "query": "nwt0022m66, nwt0026m66, nwt0038m66, nwt0041m66, nwt0048m66, nwt0122m66, nwt0081m66, nwt0485m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "description": "WRS in BG.2.002, BG.2.001 and BG.1.010b",
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "BG_EPS",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0088m66",
+            "value": "nwt0088m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0113m66",
+            "value": "nwt0113m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0097m66",
+            "value": "nwt0097m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0275m66",
+            "value": "nwt0275m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0277m66",
+            "value": "nwt0277m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0287m66",
+            "value": "nwt0287m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0226m66",
+            "value": "nwt0226m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0273m66",
+            "value": "nwt0273m66"
+          }
+        ],
+        "query": "nwt0088m66, nwt0113m66, nwt0097m66, nwt0275m66, nwt0277m66, nwt0287m66, nwt0226m66, nwt0273m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "",
+          "value": ""
+        },
+        "datasource": {
+          "type": "graphite",
+          "uid": "266gReNVk"
+        },
+        "definition": "",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "query0",
+        "options": [],
+        "query": "",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "GMT WRS Temp by Location",
+  "uid": "d38fb5c2-db25-4347-925b-6fbf139f0b39",
+  "version": 20,
+  "weekStart": ""
+}

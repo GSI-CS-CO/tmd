@@ -1,0 +1,1064 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "WRS status monitored by Icinga",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 8,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "Top 10 WRSs that have the highest FPGA temperature value",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "max": 65,
+          "min": 45,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "highestMax(aliasByNode(icinga.$prod_wrs.Temperature.perfdata.sensor.fpga.value, 1), 10)"
+        }
+      ],
+      "title": "WRS FPGA temperature (Production)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "Top 10 WRSs that have the highest FPGA temperature value",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "max": 65,
+          "min": 45,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 7,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "highestMax(aliasByNode(icinga.$unilac_wrs.Temperature.perfdata.sensor.fpga.value, 1), 10)",
+          "textEditor": true
+        }
+      ],
+      "title": "WRS FPGA temperature (Unilac)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "Top 10 WRSs that have the highest FPGA temperature value",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "max": 65,
+          "min": 45,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "id": 9,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "highestMax(aliasByNode(icinga.$int_wrs.Temperature.perfdata.sensor.fpga.value, 1), 10)",
+          "textEditor": true
+        }
+      ],
+      "title": "WRS FPGA temperature (Integration, Uni-Int)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "Top 10 WRSs that have the highest FPGA temperature value",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "max": 65,
+          "min": 45,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 27
+      },
+      "id": 10,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "highestMax(aliasByNode(icinga.$ttf_wrs.Temperature.perfdata.sensor.fpga.value, 1), 10)",
+          "textEditor": false
+        }
+      ],
+      "title": "WRS FPGA temperature (TTF)",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "1m",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "nwt0024m66",
+          "value": "nwt0024m66"
+        },
+        "datasource": {
+          "type": "graphite",
+          "uid": "266gReNVk"
+        },
+        "definition": "icinga.nwt*",
+        "hide": 2,
+        "includeAll": true,
+        "multi": false,
+        "name": "wrs",
+        "options": [],
+        "query": "icinga.nwt*",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "prod_wrs",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0013m66",
+            "value": "nwt0013m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0014m66",
+            "value": "nwt0014m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0021m66",
+            "value": "nwt0021m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0022m66",
+            "value": "nwt0022m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0024m66",
+            "value": "nwt0024m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0026m66",
+            "value": "nwt0026m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0028m66",
+            "value": "nwt0028m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0032m66",
+            "value": "nwt0032m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0038m66",
+            "value": "nwt0038m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0039m66",
+            "value": "nwt0039m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0041m66",
+            "value": "nwt0041m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0047m66",
+            "value": "nwt0047m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0048m66",
+            "value": "nwt0048m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0076m66",
+            "value": "nwt0076m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0077m66",
+            "value": "nwt0077m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0078m66",
+            "value": "nwt0078m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0079m66",
+            "value": "nwt0079m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0082m66",
+            "value": "nwt0082m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0084m66",
+            "value": "nwt0084m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0085m66",
+            "value": "nwt0085m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0086m66",
+            "value": "nwt0086m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0087m66",
+            "value": "nwt0087m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0088m66",
+            "value": "nwt0088m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0089m66",
+            "value": "nwt0089m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0090m66",
+            "value": "nwt0090m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0091m66",
+            "value": "nwt0091m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0092m66",
+            "value": "nwt0092m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0093m66",
+            "value": "nwt0093m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0094m66",
+            "value": "nwt0094m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0095m66",
+            "value": "nwt0095m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0096m66",
+            "value": "nwt0096m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0097m66",
+            "value": "nwt0097m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0098m66",
+            "value": "nwt0098m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0099m66",
+            "value": "nwt0099m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0110m66",
+            "value": "nwt0110m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0113m66",
+            "value": "nwt0113m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0117m66",
+            "value": "nwt0117m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0122m66",
+            "value": "nwt0122m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0186m66",
+            "value": "nwt0186m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0226m66",
+            "value": "nwt0226m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0272m66",
+            "value": "nwt0272m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0273m66",
+            "value": "nwt0273m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0275m66",
+            "value": "nwt0275m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0277m66",
+            "value": "nwt0277m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0284m66",
+            "value": "nwt0284m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0287m66",
+            "value": "nwt0287m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0300m66",
+            "value": "nwt0300m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0315m66",
+            "value": "nwt0315m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0316m66",
+            "value": "nwt0316m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0318m66",
+            "value": "nwt0318m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0323m66",
+            "value": "nwt0323m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0324m66",
+            "value": "nwt0324m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0081m66",
+            "value": "nwt0081m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0474m66",
+            "value": "nwt0474m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0475m66",
+            "value": "nwt0475m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0477m66",
+            "value": "nwt0477m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0479m66",
+            "value": "nwt0479m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0482m66",
+            "value": "nwt0482m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0485m66",
+            "value": "nwt0485m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0489m66",
+            "value": "nwt0489m66"
+          }
+        ],
+        "query": "nwt0013m66, nwt0014m66, nwt0021m66, nwt0022m66, nwt0024m66, nwt0026m66, nwt0028m66, nwt0032m66, nwt0038m66, nwt0039m66, nwt0041m66, nwt0047m66, nwt0048m66, nwt0076m66, nwt0077m66, nwt0078m66, nwt0079m66, nwt0082m66, nwt0084m66, nwt0085m66, nwt0086m66, nwt0087m66, nwt0088m66, nwt0089m66, nwt0090m66, nwt0091m66, nwt0092m66, nwt0093m66, nwt0094m66, nwt0095m66, nwt0096m66, nwt0097m66, nwt0098m66, nwt0099m66, nwt0110m66, nwt0113m66, nwt0117m66, nwt0122m66, nwt0186m66, nwt0226m66, nwt0272m66, nwt0273m66, nwt0275m66, nwt0277m66, nwt0284m66, nwt0287m66, nwt0300m66, nwt0315m66, nwt0316m66, nwt0318m66, nwt0323m66, nwt0324m66, nwt0081m66, nwt0474m66, nwt0475m66, nwt0477m66, nwt0479m66, nwt0482m66, nwt0485m66, nwt0489m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "unilac_wrs",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0083m66",
+            "value": "nwt0083m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0100m66",
+            "value": "nwt0100m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0478m66",
+            "value": "nwt0478m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0285m66",
+            "value": "nwt0285m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0291m66",
+            "value": "nwt0291m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0292m66",
+            "value": "nwt0292m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0293m66",
+            "value": "nwt0293m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0294m66",
+            "value": "nwt0294m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0303m66",
+            "value": "nwt0303m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0317m66",
+            "value": "nwt0317m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0466m66",
+            "value": "nwt0466m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0480m66",
+            "value": "nwt0480m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0481m66",
+            "value": "nwt0481m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0483m66",
+            "value": "nwt0483m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0484m66",
+            "value": "nwt0484m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0488m66",
+            "value": "nwt0488m66"
+          }
+        ],
+        "query": "nwt0083m66, nwt0100m66, nwt0478m66, nwt0285m66, nwt0291m66, nwt0292m66, nwt0293m66, nwt0294m66, nwt0303m66, nwt0317m66, nwt0466m66, nwt0480m66, nwt0481m66, nwt0483m66, nwt0484m66, nwt0488m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "int_wrs",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0073m66",
+            "value": "nwt0073m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0103m66",
+            "value": "nwt0103m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0104m66",
+            "value": "nwt0104m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0105m66",
+            "value": "nwt0105m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0106m66",
+            "value": "nwt0106m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0107m66",
+            "value": "nwt0107m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0108m66",
+            "value": "nwt0108m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0111m66",
+            "value": "nwt0111m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0116m66",
+            "value": "nwt0116m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0187m66",
+            "value": "nwt0187m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0283m66",
+            "value": "nwt0283m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0036m66",
+            "value": "nwt0036m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0302m66",
+            "value": "nwt0302m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0486m66",
+            "value": "nwt0486m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0487m66",
+            "value": "nwt0487m66"
+          }
+        ],
+        "query": "nwt0073m66, nwt0103m66, nwt0104m66, nwt0105m66, nwt0106m66, nwt0107m66, nwt0108m66, nwt0111m66, nwt0116m66, nwt0187m66, nwt0283m66, nwt0036m66, nwt0302m66, nwt0486m66, nwt0487m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "ttf_wrs",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0009m66",
+            "value": "nwt0009m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0010m66",
+            "value": "nwt0010m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0016m66",
+            "value": "nwt0016m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0018m66",
+            "value": "nwt0018m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0025m66",
+            "value": "nwt0025m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0049m66",
+            "value": "nwt0049m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0050m66",
+            "value": "nwt0050m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0296m66",
+            "value": "nwt0296m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0297m66",
+            "value": "nwt0297m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0469m66",
+            "value": "nwt0469m66"
+          }
+        ],
+        "query": "nwt0009m66, nwt0010m66, nwt0016m66, nwt0018m66, nwt0025m66, nwt0049m66, nwt0050m66, nwt0296m66, nwt0297m66, nwt0469m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "GMT WRS Temp by Network",
+  "uid": "Tzjg9n9Vz",
+  "version": 94,
+  "weekStart": ""
+}

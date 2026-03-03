@@ -15,11 +15,10 @@
       }
     ]
   },
-  "description": "Dashboards for testing",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 16,
+  "id": 17,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -28,7 +27,7 @@
         "type": "graphite",
         "uid": "266gReNVk"
       },
-      "description": "Relationship between temperature and PWM values\nRun 'get_temperature_pwm_values.sh' (tmd) on tsl101 to get metrics.",
+      "description": "Should be negative if fans are at 40%\nShould be positive if fans are at 100%",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -38,159 +37,7 @@
             "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Degree, C",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "smooth",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "always",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byRegexp",
-              "options": ".*fanpwmval.*"
-            },
-            "properties": [
-              {
-                "id": "custom.axisPlacement",
-                "value": "right"
-              },
-              {
-                "id": "custom.axisLabel",
-                "value": "Integer"
-              },
-              {
-                "id": "custom.lineWidth",
-                "value": 2
-              },
-              {
-                "id": "custom.lineStyle",
-                "value": {
-                  "dash": [
-                    10,
-                    10
-                  ],
-                  "fill": "dash"
-                }
-              },
-              {
-                "id": "custom.lineInterpolation",
-                "value": "stepAfter"
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 0
-      },
-      "id": 3,
-      "interval": "5m",
-      "options": {
-        "legend": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "asc"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "hide": false,
-          "refCount": 0,
-          "refId": "A",
-          "target": "aliasByNode(test.$switch.fpga, 1, 2)"
-        },
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "hide": false,
-          "refCount": 0,
-          "refId": "B",
-          "target": "test.$switch.pll"
-        },
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "hide": false,
-          "refCount": 0,
-          "refId": "C",
-          "target": "test.$switch.fanpwmval"
-        }
-      ],
-      "title": "Temperature (FPGA, PLL) vs. PWM",
-      "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "graphite",
-        "uid": "266gReNVk"
-      },
-      "description": "Monitor CPU and memory utilization of 'snmpd'. \nRun 'do_check_snmp.sh' (ci_cd) on tsl101.",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "percent",
+            "axisLabel": "tmp (PLL - FPGA) [°C]",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -208,14 +55,132 @@
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "always",
+            "showPoints": "auto",
             "spanNulls": true,
             "stacking": {
               "group": "A",
               "mode": "none"
             },
             "thresholdsStyle": {
-              "mode": "off"
+              "mode": "dashed"
+            }
+          },
+          "mappings": [],
+          "max": 10,
+          "min": -10,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": true,
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(icinga.$WRS.Temperature.perfdata.sensor.pll.value, 1, 5)"
+        },
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "hide": true,
+          "refCount": 0,
+          "refId": "B",
+          "target": "aliasByNode(icinga.$WRS.Temperature.perfdata.sensor.fpga.value, 1, 5)",
+          "textEditor": false
+        },
+        {
+          "datasource": {
+            "name": "Expression",
+            "type": "__expr__",
+            "uid": "__expr__"
+          },
+          "expression": "$A-$B",
+          "hide": false,
+          "refId": "C",
+          "type": "math"
+        }
+      ],
+      "title": "Compare PLL and FPGA",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
             }
           },
           "mappings": [],
@@ -231,57 +196,18 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "short"
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byRegexp",
-              "options": ".*vsz.*"
-            },
-            "properties": [
-              {
-                "id": "custom.axisPlacement",
-                "value": "right"
-              },
-              {
-                "id": "custom.axisLabel",
-                "value": "amount, KBytes"
-              },
-              {
-                "id": "custom.axisSoftMin",
-                "value": 8000
-              },
-              {
-                "id": "custom.axisSoftMax",
-                "value": 8500
-              },
-              {
-                "id": "custom.lineWidth",
-                "value": 2
-              },
-              {
-                "id": "custom.lineStyle",
-                "value": {
-                  "dash": [
-                    10,
-                    10
-                  ],
-                  "fill": "dash"
-                }
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 8
+        "h": 18,
+        "w": 12,
+        "x": 12,
+        "y": 0
       },
-      "id": 4,
-      "interval": "5m",
+      "id": 2,
       "options": {
         "legend": {
           "calcs": [
@@ -293,44 +219,22 @@
         },
         "tooltip": {
           "mode": "multi",
-          "sort": "asc"
+          "sort": "none"
         }
       },
-      "pluginVersion": "10.2.6",
+      "pluginVersion": "9.2.10",
       "targets": [
         {
           "datasource": {
             "type": "graphite",
             "uid": "266gReNVk"
           },
-          "hide": false,
-          "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(test.$switch.snmpd.cpu, 1, 3)",
+          "target": "icinga.$WRS.Temperature.perfdata.sensor.*.value",
           "textEditor": false
-        },
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "hide": false,
-          "refCount": 0,
-          "refId": "B",
-          "target": "aliasByNode(test.$switch.snmpd.mem, 1, 3)"
-        },
-        {
-          "datasource": {
-            "type": "graphite",
-            "uid": "266gReNVk"
-          },
-          "hide": false,
-          "refCount": 0,
-          "refId": "C",
-          "target": "aliasByNode(test.$switch.snmpd.vsz, 1, 3)"
         }
       ],
-      "title": "WRS snmpd (%cpu, %mem)",
+      "title": "WRS Sensor Temperature",
       "type": "timeseries"
     },
     {
@@ -338,7 +242,6 @@
         "type": "graphite",
         "uid": "266gReNVk"
       },
-      "description": "Test the alerting of temperature increase ",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -348,7 +251,7 @@
             "axisBorderShow": false,
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "",
+            "axisLabel": "PWM value",
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
@@ -377,16 +280,14 @@
             }
           },
           "mappings": [],
+          "max": 110,
+          "min": 0,
           "thresholds": {
             "mode": "absolute",
             "steps": [
               {
                 "color": "green",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           }
@@ -394,13 +295,12 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 24,
+        "h": 9,
+        "w": 12,
         "x": 0,
-        "y": 16
+        "y": 9
       },
-      "id": 2,
-      "interval": "5m",
+      "id": 3,
       "options": {
         "legend": {
           "calcs": [],
@@ -420,14 +320,14 @@
             "uid": "266gReNVk"
           },
           "refId": "A",
-          "target": "test.nwt0014m66.Temperature.perfdata.sensor.fpga.value"
+          "target": "aliasByNode(icinga.$WRS.Temperature.perfdata.fan.pwm_val.value, 1, 5)"
         }
       ],
-      "title": "FPGA temperature (simulation)",
+      "title": "Fan PWM value",
       "type": "timeseries"
     }
   ],
-  "refresh": "15m",
+  "refresh": "",
   "schemaVersion": 39,
   "tags": [],
   "templating": {
@@ -435,28 +335,23 @@
       {
         "current": {
           "selected": true,
-          "text": [
-            "All"
-          ],
-          "value": [
-            "$__all"
-          ]
+          "text": "nwt0482m66",
+          "value": "nwt0482m66"
         },
         "datasource": {
           "type": "graphite",
           "uid": "266gReNVk"
         },
-        "definition": "test.*",
-        "description": "Available switch",
+        "definition": "icinga.nwt*",
         "hide": 0,
-        "includeAll": true,
-        "multi": true,
-        "name": "switch",
+        "includeAll": false,
+        "multi": false,
+        "name": "WRS",
         "options": [],
         "query": {
           "queryType": "Default",
           "refId": "A",
-          "target": "test.*"
+          "target": "icinga.nwt*"
         },
         "refresh": 1,
         "regex": "",
@@ -467,13 +362,13 @@
     ]
   },
   "time": {
-    "from": "2025-01-21T13:00:00.000Z",
-    "to": "2025-01-21T15:00:00.000Z"
+    "from": "now-24h",
+    "to": "now"
   },
   "timepicker": {},
   "timezone": "",
-  "title": "WRS tests",
-  "uid": "cec5f309-4636-4e5d-8b15-6255e298f5f3",
-  "version": 52,
+  "title": "WRS zTemp Test",
+  "uid": "e773fa00-aa2d-4785-a4cc-0aa03a51fd93",
+  "version": 20,
   "weekStart": ""
 }

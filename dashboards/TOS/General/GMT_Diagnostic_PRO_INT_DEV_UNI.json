@@ -120,7 +120,7 @@
           "textEditor": false
         }
       ],
-      "title": "Minimum time budget (switch layers 1-3, value > 600us: ok; in case of  a late message, the value is re-initialized)",
+      "title": "Minimum time budget (switch layers 1-3, value > 250us: ok; in case of  a late message, the value is re-initialized)",
       "type": "timeseries"
     },
     {
@@ -992,6 +992,6 @@
   "timezone": "",
   "title": "GMT Diagnostic (PRO, INT, DEV, UNI)",
   "uid": "4YBcNb1Wz",
-  "version": 25,
+  "version": 26,
   "weekStart": ""
 }
