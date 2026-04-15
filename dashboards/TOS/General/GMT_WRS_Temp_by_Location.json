@@ -482,7 +482,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "dark-red",
@@ -529,6 +530,106 @@
         }
       ],
       "title": "WRS FPGA temperature (TH2_X)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "WRS temperatures in racks with similar thermal environment, racks in G0704A (FAIR)",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "max": 65,
+          "min": 45,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 45
+      },
+      "id": 7,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refCount": 0,
+          "refId": "A",
+          "target": "aliasByNode(icinga.$G0704A.Temperature.perfdata.sensor.fpga.value, 1)",
+          "textEditor": true
+        }
+      ],
+      "title": "WRS FPGA temperature (G0704A)",
       "type": "timeseries"
     }
   ],
@@ -923,6 +1024,79 @@
         "query": "nwt0314m66",
         "skipUrlSync": false,
         "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "description": "TOS racks in G0704A (FAIR)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "G0704A",
+        "multi": false,
+        "name": "G0704A",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0179m66",
+            "value": "nwt0179m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0180m66",
+            "value": "nwt0180m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0181m66",
+            "value": "nwt0181m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0182m66",
+            "value": "nwt0182m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0184m66",
+            "value": "nwt0184m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0309m66",
+            "value": "nwt0309m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0310m66",
+            "value": "nwt0310m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0311m66",
+            "value": "nwt0311m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0312m66",
+            "value": "nwt0312m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0313m66",
+            "value": "nwt0313m66"
+          }
+        ],
+        "query": "nwt0179m66, nwt0180m66, nwt0181m66, nwt0182m66, nwt0184m66, nwt0309m66, nwt0310m66, nwt0311m66, nwt0312m66, nwt0313m66",
+        "skipUrlSync": false,
+        "type": "custom"
       }
     ]
   },
@@ -934,6 +1108,6 @@
   "timezone": "",
   "title": "GMT WRS Temp by Location",
   "uid": "d38fb5c2-db25-4347-925b-6fbf139f0b39",
-  "version": 22,
+  "version": 23,
   "weekStart": ""
 }
