@@ -664,6 +664,31 @@
           },
           {
             "selected": false,
+            "text": "nwt0179m66",
+            "value": "nwt0179m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0180m66",
+            "value": "nwt0180m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0181m66",
+            "value": "nwt0181m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0182m66",
+            "value": "nwt0182m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0184m66",
+            "value": "nwt0184m66"
+          },
+          {
+            "selected": false,
             "text": "nwt0186m66",
             "value": "nwt0186m66"
           },
@@ -706,6 +731,36 @@
             "selected": false,
             "text": "nwt0300m66",
             "value": "nwt0300m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0309m66",
+            "value": "nwt0309m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0310m66",
+            "value": "nwt0310m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0311m66",
+            "value": "nwt0311m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0312m66",
+            "value": "nwt0312m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0313m66",
+            "value": "nwt0313m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0314m66",
+            "value": "nwt0314m66"
           },
           {
             "selected": false,
@@ -773,7 +828,7 @@
             "value": "nwt0489m66"
           }
         ],
-        "query": "nwt0013m66, nwt0014m66, nwt0021m66, nwt0022m66, nwt0024m66, nwt0026m66, nwt0028m66, nwt0032m66, nwt0038m66, nwt0039m66, nwt0041m66, nwt0047m66, nwt0048m66, nwt0076m66, nwt0077m66, nwt0078m66, nwt0079m66, nwt0082m66, nwt0084m66, nwt0085m66, nwt0086m66, nwt0087m66, nwt0088m66, nwt0089m66, nwt0090m66, nwt0091m66, nwt0092m66, nwt0093m66, nwt0094m66, nwt0095m66, nwt0096m66, nwt0097m66, nwt0098m66, nwt0099m66, nwt0110m66, nwt0113m66, nwt0117m66, nwt0122m66, nwt0186m66, nwt0226m66, nwt0272m66, nwt0273m66, nwt0275m66, nwt0277m66, nwt0284m66, nwt0287m66, nwt0300m66, nwt0315m66, nwt0316m66, nwt0318m66, nwt0323m66, nwt0324m66, nwt0081m66, nwt0474m66, nwt0475m66, nwt0477m66, nwt0479m66, nwt0482m66, nwt0485m66, nwt0489m66",
+        "query": "nwt0013m66, nwt0014m66, nwt0021m66, nwt0022m66, nwt0024m66, nwt0026m66, nwt0028m66, nwt0032m66, nwt0038m66, nwt0039m66, nwt0041m66, nwt0047m66, nwt0048m66, nwt0076m66, nwt0077m66, nwt0078m66, nwt0079m66, nwt0082m66, nwt0084m66, nwt0085m66, nwt0086m66, nwt0087m66, nwt0088m66, nwt0089m66, nwt0090m66, nwt0091m66, nwt0092m66, nwt0093m66, nwt0094m66, nwt0095m66, nwt0096m66, nwt0097m66, nwt0098m66, nwt0099m66, nwt0110m66, nwt0113m66, nwt0117m66, nwt0122m66, nwt0179m66, nwt0180m66, nwt0181m66, nwt0182m66, nwt0184m66, nwt0186m66, nwt0226m66, nwt0272m66, nwt0273m66, nwt0275m66, nwt0277m66, nwt0284m66, nwt0287m66, nwt0300m66, nwt0309m66, nwt0310m66, nwt0311m66, nwt0312m66, nwt0313m66, nwt0314m66, nwt0315m66, nwt0316m66, nwt0318m66, nwt0323m66, nwt0324m66, nwt0081m66, nwt0474m66, nwt0475m66, nwt0477m66, nwt0479m66, nwt0482m66, nwt0485m66, nwt0489m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -1059,6 +1114,6 @@
   "timezone": "",
   "title": "GMT WRS Temp by Network",
   "uid": "Tzjg9n9Vz",
-  "version": 94,
+  "version": 96,
   "weekStart": ""
 }
