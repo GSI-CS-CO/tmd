@@ -44,6 +44,10 @@
                 "value": null
               },
               {
+                "color": "#EAB839",
+                "value": 55
+              },
+              {
                 "color": "red",
                 "value": 60
               },
@@ -90,7 +94,7 @@
           "target": "aliasByNode(sortByMaxima(icinga.*.Temperature.perfdata.sensor.fpga.value), 1)"
         }
       ],
-      "title": "WRS FPGA Temperature [Thresholds >= 60° Red, >= 70° Purple]",
+      "title": "WRS FPGA Temperature [Thresholds >= 55° Yellow, >= 60° Red, >= 70° Purple]",
       "type": "stat"
     },
     {
@@ -154,8 +158,11 @@
             "type": "graphite",
             "uid": "266gReNVk"
           },
+          "hide": false,
+          "refCount": 0,
           "refId": "A",
-          "target": "aliasByNode(sortByMaxima(icinga.*.Temperature.perfdata.sensor.fpga.value), 1)"
+          "target": "aliasByNode(icinga.*.Temperature.perfdata.sensor.fpga.value, 1)",
+          "textEditor": true
         }
       ],
       "title": "WRS FPGA Temperature",
@@ -228,6 +235,7 @@
         }
       ],
       "title": "WRS PSR Temperature",
+      "transformations": [],
       "type": "bargauge"
     },
     {
@@ -310,7 +318,8 @@
             "mode": "continuous-BlYlRd"
           },
           "mappings": [],
-          "max": 5,
+          "max": 10,
+          "min": -10,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -443,13 +452,13 @@
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
-  "title": "WRS Temperature",
+  "title": "WRS Temperature Diagnostic",
   "uid": "3TDUoSC4k",
-  "version": 12,
+  "version": 21,
   "weekStart": ""
 }

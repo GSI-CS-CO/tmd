@@ -334,9 +334,9 @@
     "list": [
       {
         "current": {
-          "selected": true,
-          "text": "nwt0482m66",
-          "value": "nwt0482m66"
+          "selected": false,
+          "text": "nwt0013m66",
+          "value": "nwt0013m66"
         },
         "datasource": {
           "type": "graphite",
@@ -367,8 +367,8 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "WRS zTemp Test",
+  "title": "WRS Z Single WRS Temp",
   "uid": "e773fa00-aa2d-4785-a4cc-0aa03a51fd93",
-  "version": 20,
+  "version": 21,
   "weekStart": ""
 }

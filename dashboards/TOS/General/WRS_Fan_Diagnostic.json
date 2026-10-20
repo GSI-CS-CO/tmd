@@ -227,7 +227,7 @@
               "viz": false
             },
             "insertNulls": false,
-            "lineInterpolation": "smooth",
+            "lineInterpolation": "stepBefore",
             "lineStyle": {
               "fill": "solid"
             },
@@ -323,7 +323,7 @@
         "type": "graphite",
         "uid": "266gReNVk"
       },
-      "description": "WRSs with PLL temperature 55°C or above",
+      "description": "WRSs with PLL temperature 54°C or above",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -429,7 +429,7 @@
           "hide": false,
           "refCount": 0,
           "refId": "A",
-          "target": "averageAbove(aliasByNode(icinga.*.Temperature.perfdata.sensor.pll.value, 1), 54)",
+          "target": "averageAbove(aliasByNode(icinga.*.Temperature.perfdata.sensor.pll.value, 1), 53)",
           "textEditor": true
         }
       ],
@@ -571,6 +571,6 @@
   "timezone": "",
   "title": "WRS Fan Diagnostic",
   "uid": "d35d7af8-8adf-448b-add8-efe3d1d6972d",
-  "version": 34,
+  "version": 38,
   "weekStart": ""
 }
