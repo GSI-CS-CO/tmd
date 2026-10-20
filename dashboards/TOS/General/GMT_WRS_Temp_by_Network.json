@@ -124,7 +124,7 @@
           "target": "highestMax(aliasByNode(icinga.$prod_wrs.Temperature.perfdata.sensor.fpga.value, 1), 10)"
         }
       ],
-      "title": "WRS FPGA temperature (Production)",
+      "title": "WRS FPGA temperature (Production, Rings)",
       "type": "timeseries"
     },
     {
@@ -322,7 +322,7 @@
           "textEditor": true
         }
       ],
-      "title": "WRS FPGA temperature (Integration, Uni-Int)",
+      "title": "WRS FPGA temperature (Integration, Rings)",
       "type": "timeseries"
     },
     {
@@ -375,8 +375,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -393,6 +392,300 @@
         "w": 24,
         "x": 0,
         "y": 27
+      },
+      "id": 11,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "highestMax(aliasByNode(icinga.$uni_int_wrs.Temperature.perfdata.sensor.fpga.value, 1), 10)",
+          "textEditor": true
+        }
+      ],
+      "title": "WRS FPGA temperature (Uni-Int)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "Top 10 WRSs that have the highest FPGA temperature value",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "max": 65,
+          "min": 45,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 36
+      },
+      "id": 12,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "highestMax(aliasByNode(icinga.$user_wrs.Temperature.perfdata.sensor.fpga.value, 1), 10)",
+          "textEditor": false
+        }
+      ],
+      "title": "WRS FPGA temperature (User)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "Top 10 WRSs that have the highest FPGA temperature value",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "max": 65,
+          "min": 45,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 45
+      },
+      "id": 13,
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.2.10",
+      "targets": [
+        {
+          "datasource": {
+            "type": "graphite",
+            "uid": "266gReNVk"
+          },
+          "refId": "A",
+          "target": "highestMax(aliasByNode(icinga.$mixed_wrs.Temperature.perfdata.sensor.fpga.value, 1), 10)",
+          "textEditor": false
+        }
+      ],
+      "title": "WRS FPGA temperature (Mixed)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "graphite",
+        "uid": "266gReNVk"
+      },
+      "description": "Top 10 WRSs that have the highest FPGA temperature value",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "temperature (°C)",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "line"
+            }
+          },
+          "mappings": [],
+          "max": 65,
+          "min": 45,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 54
       },
       "id": 10,
       "options": {
@@ -861,11 +1154,6 @@
           },
           {
             "selected": false,
-            "text": "nwt0478m66",
-            "value": "nwt0478m66"
-          },
-          {
-            "selected": false,
             "text": "nwt0285m66",
             "value": "nwt0285m66"
           },
@@ -893,11 +1181,6 @@
             "selected": false,
             "text": "nwt0303m66",
             "value": "nwt0303m66"
-          },
-          {
-            "selected": false,
-            "text": "nwt0317m66",
-            "value": "nwt0317m66"
           },
           {
             "selected": false,
@@ -930,7 +1213,7 @@
             "value": "nwt0488m66"
           }
         ],
-        "query": "nwt0083m66, nwt0100m66, nwt0478m66, nwt0285m66, nwt0291m66, nwt0292m66, nwt0293m66, nwt0294m66, nwt0303m66, nwt0317m66, nwt0466m66, nwt0480m66, nwt0481m66, nwt0483m66, nwt0484m66, nwt0488m66",
+        "query": "nwt0083m66, nwt0100m66, nwt0285m66, nwt0291m66, nwt0292m66, nwt0293m66, nwt0294m66, nwt0303m66, nwt0466m66, nwt0480m66, nwt0481m66, nwt0483m66, nwt0484m66, nwt0488m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -1005,29 +1288,9 @@
             "selected": false,
             "text": "nwt0283m66",
             "value": "nwt0283m66"
-          },
-          {
-            "selected": false,
-            "text": "nwt0036m66",
-            "value": "nwt0036m66"
-          },
-          {
-            "selected": false,
-            "text": "nwt0302m66",
-            "value": "nwt0302m66"
-          },
-          {
-            "selected": false,
-            "text": "nwt0486m66",
-            "value": "nwt0486m66"
-          },
-          {
-            "selected": false,
-            "text": "nwt0487m66",
-            "value": "nwt0487m66"
           }
         ],
-        "query": "nwt0073m66, nwt0103m66, nwt0104m66, nwt0105m66, nwt0106m66, nwt0107m66, nwt0108m66, nwt0111m66, nwt0116m66, nwt0187m66, nwt0283m66, nwt0036m66, nwt0302m66, nwt0486m66, nwt0487m66",
+        "query": "nwt0073m66, nwt0103m66, nwt0104m66, nwt0105m66, nwt0106m66, nwt0107m66, nwt0108m66, nwt0111m66, nwt0116m66, nwt0187m66, nwt0283m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -1060,6 +1323,16 @@
           },
           {
             "selected": false,
+            "text": "nwt0011m66",
+            "value": "nwt0011m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0012m66",
+            "value": "nwt0012m66"
+          },
+          {
+            "selected": false,
             "text": "nwt0016m66",
             "value": "nwt0016m66"
           },
@@ -1070,8 +1343,28 @@
           },
           {
             "selected": false,
+            "text": "nwt0019m66",
+            "value": "nwt0019m66"
+          },
+          {
+            "selected": false,
             "text": "nwt0025m66",
             "value": "nwt0025m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0037m66",
+            "value": "nwt0037m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0042m66",
+            "value": "nwt0042m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0044m66",
+            "value": "nwt0044m66"
           },
           {
             "selected": false,
@@ -1085,6 +1378,61 @@
           },
           {
             "selected": false,
+            "text": "nwt0051m66",
+            "value": "nwt0051m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0071m66",
+            "value": "nwt0071m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0075m66",
+            "value": "nwt0075m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0118m66",
+            "value": "nwt0118m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0119m66",
+            "value": "nwt0119m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0174m66",
+            "value": "nwt0174m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0478m66",
+            "value": "nwt0478m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0288m66",
+            "value": "nwt0288m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0289m66",
+            "value": "nwt0289m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0290m66",
+            "value": "nwt0290m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0295m66",
+            "value": "nwt0295m66"
+          },
+          {
+            "selected": false,
             "text": "nwt0296m66",
             "value": "nwt0296m66"
           },
@@ -1095,11 +1443,310 @@
           },
           {
             "selected": false,
+            "text": "nwt0298m66",
+            "value": "nwt0298m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0299m66",
+            "value": "nwt0299m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0301m66",
+            "value": "nwt0301m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0317m66",
+            "value": "nwt0317m66"
+          },
+          {
+            "selected": false,
             "text": "nwt0469m66",
             "value": "nwt0469m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0470m66",
+            "value": "nwt0470m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0471m66",
+            "value": "nwt0471m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0472m66",
+            "value": "nwt0472m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0476m66",
+            "value": "nwt0476m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0492m66",
+            "value": "nwt0492m66"
           }
         ],
-        "query": "nwt0009m66, nwt0010m66, nwt0016m66, nwt0018m66, nwt0025m66, nwt0049m66, nwt0050m66, nwt0296m66, nwt0297m66, nwt0469m66",
+        "query": "nwt0009m66, nwt0010m66, nwt0011m66, nwt0012m66, nwt0016m66, nwt0018m66, nwt0019m66, nwt0025m66, nwt0037m66, nwt0042m66, nwt0044m66, nwt0049m66, nwt0050m66, nwt0051m66, nwt0071m66, nwt0075m66, nwt0118m66, nwt0119m66, nwt0174m66, nwt0478m66, nwt0288m66, nwt0289m66, nwt0290m66, nwt0295m66, nwt0296m66, nwt0297m66, nwt0298m66, nwt0299m66, nwt0301m66, nwt0317m66, nwt0469m66, nwt0470m66, nwt0471m66, nwt0472m66, nwt0476m66, nwt0492m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "description": "WRS for uni-int network",
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "uni_int_wrs",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0036m66",
+            "value": "nwt0036m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0302m66",
+            "value": "nwt0302m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0486m66",
+            "value": "nwt0486m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0487m66",
+            "value": "nwt0487m66"
+          }
+        ],
+        "query": "nwt0036m66, nwt0302m66, nwt0486m66, nwt0487m66",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "description": "WRS of user network",
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "user_wrs",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0015m66",
+            "value": "nwt0015m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0023m66",
+            "value": "nwt0023m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0027m66",
+            "value": "nwt0027m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0029m66",
+            "value": "nwt0029m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0030m66",
+            "value": "nwt0030m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0031m66",
+            "value": "nwt0031m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0040m66",
+            "value": "nwt0040m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0072m66",
+            "value": "nwt0072m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0074m66",
+            "value": "nwt0074m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0080m66",
+            "value": "nwt0080m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0490m66",
+            "value": "nwt0490m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0114m66",
+            "value": "nwt0114m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0115m66",
+            "value": "nwt0115m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0120m66",
+            "value": "nwt0120m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0121m66",
+            "value": "nwt0121m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0171m66",
+            "value": "nwt0171m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0174m66",
+            "value": "nwt0174m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0183m66",
+            "value": "nwt0183m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0201m66",
+            "value": "nwt0201m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0211m66",
+            "value": "nwt0211m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0264m66",
+            "value": "nwt0264m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0276m66",
+            "value": "nwt0276m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0279m66",
+            "value": "nwt0279m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0286m66",
+            "value": "nwt0286m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0319m66",
+            "value": "nwt0319m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0321m66",
+            "value": "nwt0321m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0322m66",
+            "value": "nwt0322m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0467m66",
+            "value": "nwt0467m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0473m66",
+            "value": "nwt0473m66"
+          }
+        ],
+        "query": "nwt0015m66, nwt0023m66, nwt0027m66, nwt0029m66, nwt0030m66, nwt0031m66, nwt0040m66, nwt0072m66, nwt0074m66, nwt0080m66, nwt0490m66, nwt0114m66, nwt0115m66, nwt0120m66, nwt0121m66, nwt0171m66, nwt0174m66, nwt0183m66, nwt0201m66, nwt0211m66, nwt0264m66, nwt0276m66, nwt0279m66, nwt0286m66, nwt0319m66, nwt0321m66, nwt0322m66, nwt0467m66, nwt0473m66\n",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "description": "distribution WRS of mixed network",
+        "hide": 0,
+        "includeAll": true,
+        "multi": false,
+        "name": "mixed_wrs",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "nwt0043m66",
+            "value": "nwt0043m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0045m66",
+            "value": "nwt0045m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0320m66",
+            "value": "nwt0320m66"
+          },
+          {
+            "selected": false,
+            "text": "nwt0465m66",
+            "value": "nwt0465m66"
+          }
+        ],
+        "query": "nwt0043m66, nwt0045m66, nwt0320m66, nwt0465m66",
         "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
@@ -1107,13 +1754,13 @@
     ]
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-2d",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "GMT WRS Temp by Network",
   "uid": "Tzjg9n9Vz",
-  "version": 96,
+  "version": 104,
   "weekStart": ""
 }
